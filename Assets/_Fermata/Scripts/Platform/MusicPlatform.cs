@@ -35,6 +35,7 @@ public class MusicPlatform : MonoBehaviour
         return !spriteRenderer.enabled && !listenOutline.enabled;
     }
 
+    // Temporary reveal (used outside of the sequence puzzle)
     public void Reveal()
     {
         spriteRenderer.enabled = true;
@@ -43,20 +44,27 @@ public class MusicPlatform : MonoBehaviour
         listenOutline.enabled = false;
 
         CancelInvoke(nameof(Hide));
-
         Invoke(nameof(Hide), revealDuration);
     }
 
+    // Called when the player guesses the correct note.
+    // The platform becomes visible ONLY.
+    // It is NOT solid until the full sequence is completed.
     public void RevealForSequence()
     {
         spriteRenderer.enabled = true;
-        platformCollider.enabled = true;
+
+        // IMPORTANT:
+        // Keep collision disabled while solving.
+        platformCollider.enabled = false;
 
         listenOutline.enabled = false;
 
         CancelInvoke(nameof(Hide));
     }
 
+    // Called after the FULL sequence is completed.
+    // Makes the platform visible AND solid.
     public void ActivateForCrossing(float duration)
     {
         spriteRenderer.enabled = true;
@@ -88,10 +96,10 @@ public class MusicPlatform : MonoBehaviour
 
     public void ListenReveal(float duration)
     {
-        spriteRenderer.enabled = false;
+        // Listen only reveals the LOCATION.
+        // It should never make the platform usable.
 
-        // Listen only reveals the location.
-        // It does NOT make the platform physically usable.
+        spriteRenderer.enabled = false;
         platformCollider.enabled = false;
 
         UpdateListenOutline();
@@ -129,9 +137,7 @@ public class MusicPlatform : MonoBehaviour
 
         listenOutline.positionCount = 4;
 
-        listenOutline.material = new Material(
-            Shader.Find("Sprites/Default")
-        );
+        listenOutline.material = new Material(Shader.Find("Sprites/Default"));
 
         listenOutline.startColor = Color.white;
         listenOutline.endColor = Color.white;

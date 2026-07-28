@@ -61,10 +61,9 @@ public class SequenceZone : MonoBehaviour
         HideAllPlatforms();
     }
 
-    public bool HasSolvedOnce()
-    {
-        return hasSolvedOnce;
-    }
+    public bool HasSolvedOnce() => hasSolvedOnce;
+
+    public bool IsAttemptInProgress() => isActive && currentProgress > 0 && !isBridgeActive;
 
     public bool TrySubmitNote(NoteType playedNote)
     {
@@ -151,6 +150,8 @@ public class SequenceZone : MonoBehaviour
         isBridgeActive = false;
 
         HideAllPlatforms();
+
+        BackgroundMusicManager.Instance?.Restore();
     }
 
     private NoteType GetExpectedNote()

@@ -26,7 +26,6 @@ public class MusicPlatform : MonoBehaviour
         audioSource.spatialBlend = 0f;
 
         CreateListenOutline();
-
         Hide();
     }
 
@@ -71,13 +70,9 @@ public class MusicPlatform : MonoBehaviour
         CancelInvoke(nameof(Hide));
         CancelInvoke(nameof(HideListenOutline));
 
-        spriteRenderer.enabled = false;
-        platformCollider.enabled = false;
-
-        if (listenOutline != null)
-        {
-            listenOutline.enabled = false;
-        }
+        if (spriteRenderer != null) spriteRenderer.enabled = false;
+        if (platformCollider != null) platformCollider.enabled = false;
+        if (listenOutline != null) listenOutline.enabled = false;
     }
 
     public void ListenReveal(float duration)

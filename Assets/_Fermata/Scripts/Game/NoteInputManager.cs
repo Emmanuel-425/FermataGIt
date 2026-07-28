@@ -50,9 +50,9 @@ public class NoteInputManager : MonoBehaviour
 
         bool wasCorrect = activeZone.TrySubmitNote(playedNote);
 
-        // Only lock the input if the player pressed the correct note.
         if (wasCorrect)
         {
+            BackgroundMusicManager.Instance?.Duck();
             StartCoroutine(InputCooldown());
         }
     }
@@ -64,5 +64,9 @@ public class NoteInputManager : MonoBehaviour
         yield return new WaitForSeconds(noteInputCooldown);
 
         inputLocked = false;
+
+        SequenceZone activeZone = sequenceManager?.GetActiveZone();
+        if (activeZone == null || !activeZone.IsAttemptInProgress())
+            BackgroundMusicManager.Instance?.Restore();
     }
 }

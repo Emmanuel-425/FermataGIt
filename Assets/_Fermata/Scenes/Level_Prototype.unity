@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 43221168}
   - component: {fileID: 43221170}
   m_Layer: 0
-  m_Name: SequenceZone_1.1
+  m_Name: SequenceZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 98497385}
   - component: {fileID: 98497384}
   m_Layer: 0
-  m_Name: Checkpoint_1
+  m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +724,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1177,7 +1177,9 @@ Transform:
   m_LocalPosition: {x: 32.87, y: -0.85, z: 0}
   m_LocalScale: {x: 16.117912, y: 0.64899784, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1125392424}
+  - {fileID: 914766011}
   m_Father: {fileID: 1726301356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &824426213
@@ -1433,11 +1435,11 @@ Transform:
   m_GameObject: {fileID: 914766007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.63, y: 3.39, z: 0}
-  m_LocalScale: {x: 2.4570692, y: 0.707784, z: 1}
+  m_LocalPosition: {x: -1.0075746, y: 6.5331492, z: 0}
+  m_LocalScale: {x: 0.15244338, y: 1.0905797, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1726301356}
+  m_Father: {fileID: 824426212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &943423237
 GameObject:
@@ -1618,11 +1620,11 @@ Transform:
   m_GameObject: {fileID: 1125392420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.57, y: 1.34, z: 0}
-  m_LocalScale: {x: 2.4570692, y: 0.707784, z: 1}
+  m_LocalPosition: {x: -0.7010833, y: 3.3744333, z: 0}
+  m_LocalScale: {x: 0.15244338, y: 1.0905797, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1726301356}
+  m_Father: {fileID: 824426212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1288321477
 GameObject:
@@ -2265,7 +2267,7 @@ GameObject:
   - component: {fileID: 1615594046}
   - component: {fileID: 1615594045}
   m_Layer: 0
-  m_Name: Checkpoint_1
+  m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2408,8 +2410,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 824426212}
-  - {fileID: 1125392424}
-  - {fileID: 914766011}
   - {fileID: 2047535938}
   - {fileID: 98497383}
   m_Father: {fileID: 0}
@@ -2460,7 +2460,7 @@ GameObject:
   - component: {fileID: 2047535940}
   - component: {fileID: 2047535939}
   m_Layer: 0
-  m_Name: SequenceZone_1.1
+  m_Name: SequenceZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

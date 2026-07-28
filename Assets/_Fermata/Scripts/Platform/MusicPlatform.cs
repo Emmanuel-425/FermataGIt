@@ -5,8 +5,8 @@ public class MusicPlatform : MonoBehaviour
     [Header("Platform Settings")]
     [SerializeField] private NoteType note;
 
-    [Header("Normal Reveal Settings")]
-    [SerializeField] private float revealDuration = 2f;
+    [Header("Audio")]
+    [SerializeField] private AudioClip noteClip;
 
     [Header("Listen Settings")]
     [SerializeField] private float listenLineWidth = 0.05f;
@@ -14,11 +14,16 @@ public class MusicPlatform : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D platformCollider;
     private LineRenderer listenOutline;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         platformCollider = GetComponent<Collider2D>();
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f;
 
         CreateListenOutline();
 
@@ -35,36 +40,17 @@ public class MusicPlatform : MonoBehaviour
         return !spriteRenderer.enabled && !listenOutline.enabled;
     }
 
-    // Temporary reveal (used outside of the sequence puzzle)
-    public void Reveal()
-    {
-        spriteRenderer.enabled = true;
-        platformCollider.enabled = true;
-
-        listenOutline.enabled = false;
-
-        CancelInvoke(nameof(Hide));
-        Invoke(nameof(Hide), revealDuration);
-    }
-
-    // Called when the player guesses the correct note.
-    // The platform becomes visible ONLY.
-    // It is NOT solid until the full sequence is completed.
     public void RevealForSequence()
     {
         spriteRenderer.enabled = true;
-
-        // IMPORTANT:
-        // Keep collision disabled while solving.
         platformCollider.enabled = false;
-
         listenOutline.enabled = false;
 
         CancelInvoke(nameof(Hide));
+
+        PlayNoteSound();
     }
 
-    // Called after the FULL sequence is completed.
-    // Makes the platform visible AND solid.
     public void ActivateForCrossing(float duration)
     {
         spriteRenderer.enabled = true;
@@ -96,9 +82,6 @@ public class MusicPlatform : MonoBehaviour
 
     public void ListenReveal(float duration)
     {
-        // Listen only reveals the LOCATION.
-        // It should never make the platform usable.
-
         spriteRenderer.enabled = false;
         platformCollider.enabled = false;
 
@@ -106,8 +89,16 @@ public class MusicPlatform : MonoBehaviour
 
         listenOutline.enabled = true;
 
+        PlayNoteSound();
+
         CancelInvoke(nameof(HideListenOutline));
         Invoke(nameof(HideListenOutline), duration);
+    }
+
+    private void PlayNoteSound()
+    {
+        if (noteClip != null)
+            audioSource.PlayOneShot(noteClip);
     }
 
     private void HideListenOutline()

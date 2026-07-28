@@ -85,8 +85,4 @@ public class CheckpointManager : MonoBehaviour
         Debug.Log("Player respawned at checkpoint.");
     }
 
-    public Vector3 GetCheckpointPosition()
-    {
-        return currentCheckpointPosition;
-    }
 }

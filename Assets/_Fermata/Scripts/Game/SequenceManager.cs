@@ -72,10 +72,11 @@ public class SequenceManager : MonoBehaviour
             return false;
         }
 
-        if (!requiredZone.IsComplete())
+        // CHANGED
+        if (!requiredZone.HasSolvedOnce())
         {
             Debug.Log(
-                "Cannot advance yet. Complete the sequence first."
+                "Cannot advance yet. Solve the sequence first."
             );
 
             return false;

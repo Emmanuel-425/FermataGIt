@@ -407,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteInputManager
   sequenceManager: {fileID: 225115413}
   noteInputCooldown: 0.5
+  wrongNoteClip: {fileID: 8300000, guid: 1fcd99cb43689c7438b8d16ced70869c, type: 3}
 --- !u!4 &225115410
 Transform:
   m_ObjectHideFlags: 0
@@ -1699,6 +1700,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  footstepClip: {fileID: 8300000, guid: c722ffd591c637d4bb2121cda2cdeb80, type: 3}
+  firstJumpClip: {fileID: 8300000, guid: f85979d929993bb4d83c595b02a2f6ed, type: 3}
+  doubleJumpClip: {fileID: 8300000, guid: f85979d929993bb4d83c595b02a2f6ed, type: 3}
 --- !u!50 &1288321480
 Rigidbody2D:
   serializedVersion: 5

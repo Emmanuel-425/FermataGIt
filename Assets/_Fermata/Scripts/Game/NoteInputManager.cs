@@ -10,6 +10,10 @@ public class NoteInputManager : MonoBehaviour
     [Tooltip("Time (in seconds) before another note can be played after a CORRECT note.")]
     [SerializeField] private float noteInputCooldown = 1f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip wrongNoteClip;
+
+    private AudioSource audioSource;
     private bool inputLocked;
 
     private void Update()
@@ -28,6 +32,13 @@ public class NoteInputManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
             PlayNote(NoteType.Fa);
+    }
+
+    private void Awake()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f;
     }
 
     private void PlayNote(NoteType playedNote)
@@ -54,6 +65,10 @@ public class NoteInputManager : MonoBehaviour
         {
             BackgroundMusicManager.Instance?.Duck();
             StartCoroutine(InputCooldown());
+        }
+        else if (wrongNoteClip != null)
+        {
+            audioSource.PlayOneShot(wrongNoteClip);
         }
     }
 

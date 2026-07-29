@@ -46,11 +46,14 @@ public class SequenceZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player"))
-            return;
+        if (!other.CompareTag("Player")) return;
+        sequenceManager?.ActivateZone(this);
+    }
 
-        if (sequenceManager != null)
-            sequenceManager.ActivateZone(this);
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        sequenceManager?.ClearZone(this);
     }
 
     public void Activate()
@@ -74,8 +77,6 @@ public class SequenceZone : MonoBehaviour
 
         CancelInvoke(nameof(ResetSequence));
         CancelInvoke(nameof(FinishBridgeActivation));
-
-        HideAllPlatforms();
     }
 
     public bool HasSolvedOnce() => hasSolvedOnce;

@@ -26,6 +26,13 @@ public class SequenceManager : MonoBehaviour
         activeZone.Activate();
     }
 
+    public void ClearZone(SequenceZone zone)
+    {
+        if (activeZone != zone) return;
+        activeZone.Deactivate();
+        activeZone = null;
+    }
+
     public void ResetActiveZoneForRespawn()
     {
         if (activeZone != null)

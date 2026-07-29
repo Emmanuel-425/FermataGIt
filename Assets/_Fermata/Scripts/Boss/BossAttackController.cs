@@ -85,7 +85,7 @@ public class BossAttackController : MonoBehaviour
 
         proj.PassingLineY = passingLineY;
         proj.PlayerY = player.position.y;
-        proj.Init(notes, player.position, speed, boss, player);
+        proj.Init(notes, player.position, speed, boss, player, bossHealth);
         proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
         proj.onHitPlayer.AddListener(OnProjectileHitPlayer);
         proj.onCrossedLine.AddListener(OnProjectileCrossedLine);

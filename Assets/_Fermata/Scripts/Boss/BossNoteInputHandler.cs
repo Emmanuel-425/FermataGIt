@@ -5,7 +5,6 @@ public class BossNoteInputHandler : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private BossAttackController attackController;
-    [SerializeField] private BossHealth bossHealth;
     [SerializeField] private PlayerBossHealth playerHealth;
     [SerializeField] private PlayerSpeedController speedController;
 
@@ -46,9 +45,7 @@ public class BossNoteInputHandler : MonoBehaviour
             if (isLastNote)
             {
                 projectileQueue.RemoveAt(0);
-                int damage = target.NoteCount;
                 target.DeflectToBoss();
-                bossHealth?.TakeDamage(damage);
             }
             else
             {

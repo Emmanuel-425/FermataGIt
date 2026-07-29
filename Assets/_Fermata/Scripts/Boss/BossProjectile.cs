@@ -32,9 +32,11 @@ public class BossProjectile : MonoBehaviour
     private bool crossed;
     private bool redirected;
     private bool redirectedToPlayer;
+    private int noteCount;
 
     private Transform bossTransform;
     private Transform playerTransform;
+    private BossHealth bossHealth;
 
     private void Awake()
     {
@@ -43,13 +45,15 @@ public class BossProjectile : MonoBehaviour
         audioSource.spatialBlend = 0f;
     }
 
-    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed, Transform boss, Transform player)
+    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed, Transform boss, Transform player, BossHealth health)
     {
         Notes = notes;
+        noteCount = notes.Length;
         CurrentNoteIndex = 0;
         speed = projectileSpeed;
         bossTransform = boss;
         playerTransform = player;
+        bossHealth = health;
         moveDirection = (targetPosition - (Vector2)transform.position).normalized;
 
         StartCoroutine(PlayNotePreview());
@@ -120,10 +124,16 @@ public class BossProjectile : MonoBehaviour
         }
     }
 
+    private bool hasHit;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (hasHit) return;
+
         if (redirected && other.CompareTag("Boss"))
         {
+            hasHit = true;
+            bossHealth?.TakeDamage(noteCount);
             onHitBoss?.Invoke(this);
             Destroy(gameObject);
             return;
@@ -131,6 +141,7 @@ public class BossProjectile : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            hasHit = true;
             other.GetComponent<PlayerBossHealth>()?.TakeWrongNoteDamage();
             onHitPlayer?.Invoke(this);
             Destroy(gameObject);

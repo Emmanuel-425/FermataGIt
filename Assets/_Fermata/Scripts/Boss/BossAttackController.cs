@@ -6,10 +6,6 @@ public class BossAttackController : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform spawnPoint;
 
-    [Header("Target")]
-    [SerializeField] private Transform player;
-    [SerializeField] private float targetRandomOffset = 0.5f;
-
     [Header("Passing Line")]
     [SerializeField] private float passingLineY = 3f;
 
@@ -18,7 +14,9 @@ public class BossAttackController : MonoBehaviour
     [SerializeField] private float phase2Interval = 0.9f;
 
     [Header("References")]
+    [SerializeField] private Transform player;
     [SerializeField] private PlayerSpeedController speedController;
+    [SerializeField] private BossNoteInputHandler noteInputHandler;
 
     private float timer;
     private float currentInterval;
@@ -32,47 +30,21 @@ public class BossAttackController : MonoBehaviour
         currentInterval = phase1Interval;
     }
 
-    private void Start()
-    {
-        // Automatically find the player if not assigned.
-        if (player == null)
-        {
-            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
-            if (playerObject != null)
-            {
-                player = playerObject.transform;
-            }
-            else
-            {
-                Debug.LogError("BossAttackController: No GameObject with the Player tag was found.");
-            }
-        }
-    }
-
     public void StartAttacking()
     {
         active = true;
         timer = 0f;
     }
 
-    public void StopAttacking()
-    {
-        active = false;
-    }
+    public void StopAttacking() => active = false;
 
-    public void EnterPhaseTwo()
-    {
-        currentInterval = phase2Interval;
-    }
+    public void EnterPhaseTwo() => currentInterval = phase2Interval;
 
     private void Update()
     {
-        if (!active)
-            return;
+        if (!active) return;
 
         timer += Time.deltaTime;
-
         if (timer >= currentInterval)
         {
             timer = 0f;
@@ -82,54 +54,26 @@ public class BossAttackController : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        if (projectilePrefab == null)
-        {
-            Debug.LogError("BossAttackController: Projectile Prefab is missing.");
-            return;
-        }
+        GameObject go = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+        BossProjectile proj = go.GetComponent<BossProjectile>();
 
-        if (spawnPoint == null)
-        {
-            Debug.LogError("BossAttackController: Spawn Point is missing.");
-            return;
-        }
+        NoteType note = allNotes[Random.Range(0, allNotes.Length)];
 
-        if (player == null)
-        {
-            Debug.LogError("BossAttackController: Player reference is missing.");
-            return;
-        }
+        proj.PassingLineY = passingLineY;
+        proj.PlayerY = player.position.y;
+        proj.Init(note, player.position);
+        proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
+        proj.onCrossedLine.AddListener(OnProjectileCrossedLine);
 
-        GameObject projectileObject = Instantiate(
-            projectilePrefab,
-            spawnPoint.position,
-            Quaternion.identity
-        );
-
-        BossProjectile projectile =
-            projectileObject.GetComponent<BossProjectile>();
-
-        if (projectile == null)
-        {
-            Debug.LogError("BossAttackController: Projectile prefab does not contain BossProjectile.");
-            return;
-        }
-
-        NoteType note =
-            allNotes[Random.Range(0, allNotes.Length)];
-
-        Vector2 targetPosition = player.position;
-
-        // Small random offset so every projectile isn't perfectly accurate.
-        targetPosition += Random.insideUnitCircle * targetRandomOffset;
-
-        projectile.PassingLineY = passingLineY;
-        projectile.Init(note, targetPosition);
-
-        projectile.onCrossedLine.AddListener(OnProjectileCrossed);
+        noteInputHandler?.RegisterProjectile(proj);
     }
 
-    private void OnProjectileCrossed(BossProjectile projectile)
+    private void OnProjectilePassedPlayer(BossProjectile proj)
+    {
+        noteInputHandler?.UnregisterProjectile(proj);
+    }
+
+    private void OnProjectileCrossedLine(BossProjectile proj)
     {
         speedController?.ApplySlow();
     }

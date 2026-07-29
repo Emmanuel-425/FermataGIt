@@ -301,9 +301,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1035099691804440178, guid: 5b9513b22331aac43ae846cc73cc5d97, type: 3}
   spawnPoint: {fileID: 980533419}
   passingLineY: 10
-  phase1Interval: 1.2
-  phase2Interval: 0.9
+  phase1Interval: 3
+  phase2Interval: 1.5
+  player: {fileID: 1785477754}
   speedController: {fileID: 1785477747}
+  noteInputHandler: {fileID: 1649756658}
 --- !u!4 &852753390
 Transform:
   m_ObjectHideFlags: 0
@@ -457,7 +459,6 @@ MonoBehaviour:
   bossHealth: {fileID: 852753388}
   playerHealth: {fileID: 1785477748}
   speedController: {fileID: 1785477747}
-  wrongNoteClip: {fileID: 8300000, guid: 1fcd99cb43689c7438b8d16ced70869c, type: 3}
 --- !u!4 &1649756659
 Transform:
   m_ObjectHideFlags: 0
@@ -573,6 +574,11 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1785477754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 298866034662401773, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+  m_PrefabInstance: {fileID: 1785477745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2087933580
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BossNoteInputHandler : MonoBehaviour
 {
@@ -8,20 +9,22 @@ public class BossNoteInputHandler : MonoBehaviour
     [SerializeField] private PlayerBossHealth playerHealth;
     [SerializeField] private PlayerSpeedController speedController;
 
-    [Header("Audio")]
-    [SerializeField] private AudioClip wrongNoteClip;
+    private readonly List<BossProjectile> projectileQueue = new List<BossProjectile>();
 
-    private AudioSource audioSource;
-
-    private void Awake()
+    public void RegisterProjectile(BossProjectile projectile)
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.spatialBlend = 0f;
+        projectileQueue.Add(projectile);
+    }
+
+    public void UnregisterProjectile(BossProjectile projectile)
+    {
+        projectileQueue.Remove(projectile);
     }
 
     private void Update()
     {
+        projectileQueue.RemoveAll(p => p == null);
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) TryNote(NoteType.Do);
         else if (Input.GetKeyDown(KeyCode.Alpha2)) TryNote(NoteType.Re);
         else if (Input.GetKeyDown(KeyCode.Alpha3)) TryNote(NoteType.Mi);
@@ -30,39 +33,22 @@ public class BossNoteInputHandler : MonoBehaviour
 
     private void TryNote(NoteType played)
     {
-        BossProjectile target = FindOldestProjectile();
+        if (projectileQueue.Count == 0) return;
 
-        if (target == null) return;
+        BossProjectile target = projectileQueue[0];
 
         if (played == target.Note)
         {
+            projectileQueue.RemoveAt(0);
             target.Deflect();
             bossHealth?.TakeDamage();
             speedController?.ApplyRecovery();
         }
         else
         {
+            projectileQueue.RemoveAt(0);
+            target.Deflect();
             playerHealth?.TakeWrongNoteDamage();
-            if (wrongNoteClip != null)
-                audioSource.PlayOneShot(wrongNoteClip);
         }
-    }
-
-    // Targets the projectile closest to the passing line (highest Y)
-    private BossProjectile FindOldestProjectile()
-    {
-        BossProjectile best = null;
-        float highestY = float.NegativeInfinity;
-
-        foreach (BossProjectile p in FindObjectsByType<BossProjectile>(FindObjectsSortMode.None))
-        {
-            if (p.transform.position.y > highestY)
-            {
-                highestY = p.transform.position.y;
-                best = p;
-            }
-        }
-
-        return best;
     }
 }

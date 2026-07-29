@@ -6,24 +6,21 @@ public class BossProjectile : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed = 4f;
 
-    [Header("Lifetime")]
-    [SerializeField] private float maxLifeTime = 6f;
-
     [Header("Audio")]
-    [SerializeField] private AudioClip[] noteClips;
+    [SerializeField] private AudioClip[] noteClips; // Element 0=Do, 1=Re, 2=Mi, 3=Fa
 
     public NoteType Note { get; private set; }
-
     public float PassingLineY { get; set; }
-
-    public UnityEvent<BossProjectile> onCrossedLine;
-
-    private AudioSource audioSource;
+    public float PlayerY { get; set; }
 
     private Vector2 moveDirection;
 
+    public UnityEvent<BossProjectile> onPassedPlayer;
+    public UnityEvent<BossProjectile> onCrossedLine;
+
+    private AudioSource audioSource;
+    private bool passedPlayer;
     private bool crossed;
-    private float timer;
 
     private void Awake()
     {
@@ -35,72 +32,29 @@ public class BossProjectile : MonoBehaviour
     public void Init(NoteType note, Vector2 targetPosition)
     {
         Note = note;
-
-        moveDirection =
-            (targetPosition - (Vector2)transform.position).normalized;
+        moveDirection = (targetPosition - (Vector2)transform.position).normalized;
 
         int index = (int)note;
-
-        if (noteClips != null &&
-            index >= 0 &&
-            index < noteClips.Length &&
-            noteClips[index] != null)
-        {
+        if (noteClips != null && index < noteClips.Length && noteClips[index] != null)
             audioSource.PlayOneShot(noteClips[index]);
-        }
     }
 
     private void Update()
     {
-        transform.position +=
-            (Vector3)(moveDirection * speed * Time.deltaTime);
+        transform.Translate(moveDirection * speed * Time.deltaTime);
 
-        timer += Time.deltaTime;
-
-        if (!crossed)
+        if (!passedPlayer && transform.position.y >= PlayerY)
         {
-            if (moveDirection.y > 0f)
-            {
-                if (transform.position.y >= PassingLineY)
-                {
-                    crossed = true;
-                    onCrossedLine?.Invoke(this);
-                    Destroy(gameObject);
-                    return;
-                }
-            }
-            else
-            {
-                if (transform.position.y <= PassingLineY)
-                {
-                    crossed = true;
-                    onCrossedLine?.Invoke(this);
-                    Destroy(gameObject);
-                    return;
-                }
-            }
+            passedPlayer = true;
+            onPassedPlayer?.Invoke(this);
         }
 
-        if (timer >= maxLifeTime)
+        if (!crossed && transform.position.y >= PassingLineY)
         {
+            crossed = true;
+            onCrossedLine?.Invoke(this);
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player"))
-            return;
-
-        PlayerBossHealth playerHealth =
-            other.GetComponent<PlayerBossHealth>();
-
-        if (playerHealth != null)
-        {
-            playerHealth.TakeProjectileDamage();
-        }
-
-        Destroy(gameObject);
     }
 
     public void Deflect()

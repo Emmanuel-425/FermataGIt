@@ -29,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private int jumpsRemaining;
 
+    // Base values
+    private float baseMoveSpeed;
+    private float baseJumpForce;
+
+    // Current values
+    private float currentMoveSpeed;
+    private float currentJumpForce;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
         audioSource.loop = true;
         audioSource.spatialBlend = 0f;
         audioSource.clip = footstepClip;
+
+        // Store original values
+        baseMoveSpeed = moveSpeed;
+        baseJumpForce = jumpForce;
+
+        currentMoveSpeed = moveSpeed;
+        currentJumpForce = jumpForce;
     }
 
     private void Start()
@@ -65,12 +80,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SetMoveSpeed(float speed) => moveSpeed = speed;
+    public void SetMoveSpeed(float speed)
+    {
+        currentMoveSpeed = speed;
+
+        float ratio = currentMoveSpeed / baseMoveSpeed;
+
+        // Scale jump force together with movement speed
+        currentJumpForce = baseJumpForce * ratio;
+    }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(
-            horizontalInput * moveSpeed,
+            horizontalInput * currentMoveSpeed,
             rb.linearVelocity.y
         );
     }
@@ -81,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = new Vector2(
             rb.linearVelocity.x,
-            jumpForce
+            currentJumpForce
         );
 
         jumpsRemaining--;

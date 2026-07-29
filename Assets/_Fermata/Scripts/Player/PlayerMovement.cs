@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void SetMoveSpeed(float speed) => moveSpeed = speed;
+
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(

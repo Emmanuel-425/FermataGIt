@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 public class PlayerBossHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private int maxHP = 100;
-    [SerializeField] private int wrongNoteDamage = 15;
+    [SerializeField] private int maxHP = 10;
+    [SerializeField] private int wrongNoteDamage = 1;
 
     public UnityEvent onDeath;
+    public UnityEvent<int> onDamaged;
 
     private int currentHP;
 
@@ -18,6 +19,7 @@ public class PlayerBossHealth : MonoBehaviour
     {
         currentHP -= wrongNoteDamage;
         Debug.Log($"Player HP: {currentHP}");
+        onDamaged?.Invoke(currentHP);
 
         if (currentHP <= 0)
         {

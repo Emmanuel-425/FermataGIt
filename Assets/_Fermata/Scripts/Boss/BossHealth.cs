@@ -8,6 +8,7 @@ public class BossHealth : MonoBehaviour
 
     public UnityEvent onPhaseTwo;
     public UnityEvent onDeath;
+    public UnityEvent<int> onDamaged;
 
     private int currentHP;
     private bool phaseTwoTriggered;
@@ -20,6 +21,7 @@ public class BossHealth : MonoBehaviour
     {
         currentHP--;
         Debug.Log($"Boss HP: {currentHP}");
+        onDamaged?.Invoke(currentHP);
 
         if (!phaseTwoTriggered && currentHP <= maxHP / 2)
         {

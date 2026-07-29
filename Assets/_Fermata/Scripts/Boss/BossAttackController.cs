@@ -63,12 +63,18 @@ public class BossAttackController : MonoBehaviour
         proj.PlayerY = player.position.y;
         proj.Init(note, player.position);
         proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
+        proj.onHitPlayer.AddListener(OnProjectileHitPlayer);
         proj.onCrossedLine.AddListener(OnProjectileCrossedLine);
 
         noteInputHandler?.RegisterProjectile(proj);
     }
 
     private void OnProjectilePassedPlayer(BossProjectile proj)
+    {
+        noteInputHandler?.UnregisterProjectile(proj);
+    }
+
+    private void OnProjectileHitPlayer(BossProjectile proj)
     {
         noteInputHandler?.UnregisterProjectile(proj);
     }

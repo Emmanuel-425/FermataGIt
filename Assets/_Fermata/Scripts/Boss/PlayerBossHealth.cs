@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerBossHealth : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class PlayerBossHealth : MonoBehaviour
         Debug.Log($"Player HP: {currentHP}");
 
         if (currentHP <= 0)
+        {
             onDeath?.Invoke();
+            SceneManager.LoadScene("Level_Prototype");
+        }
     }
 }

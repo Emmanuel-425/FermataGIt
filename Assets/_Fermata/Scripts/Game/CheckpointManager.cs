@@ -36,6 +36,12 @@ public class CheckpointManager : MonoBehaviour
             currentCheckpointPosition =
                 player.position;
         }
+
+        if (CheckpointData.Instance != null && CheckpointData.Instance.HasSaved)
+        {
+            currentCheckpointPosition = CheckpointData.Instance.SavedPosition;
+            RespawnPlayer();
+        }
     }
 
     public void SetCheckpoint(Transform checkpoint)
@@ -47,6 +53,8 @@ public class CheckpointManager : MonoBehaviour
 
         currentCheckpointPosition =
             checkpoint.position;
+
+        CheckpointData.Instance?.Save(currentCheckpointPosition);
 
         Debug.Log(
             "Checkpoint updated: "

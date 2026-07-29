@@ -17,6 +17,7 @@ public class BossProjectile : MonoBehaviour
 
     public UnityEvent<BossProjectile> onPassedPlayer;
     public UnityEvent<BossProjectile> onCrossedLine;
+    public UnityEvent<BossProjectile> onHitPlayer;
 
     private AudioSource audioSource;
     private bool passedPlayer;
@@ -59,6 +60,15 @@ public class BossProjectile : MonoBehaviour
 
     public void Deflect()
     {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        other.GetComponent<PlayerBossHealth>()?.TakeWrongNoteDamage();
+        onHitPlayer?.Invoke(this);
         Destroy(gameObject);
     }
 }

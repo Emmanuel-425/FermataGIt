@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class NoteInputManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class NoteInputManager : MonoBehaviour
 
     private AudioSource audioSource;
     private bool inputLocked;
+
+    public event Action OnCorrectNote;
+    public event Action OnWrongNote;
 
     private void Update()
     {
@@ -63,12 +67,15 @@ public class NoteInputManager : MonoBehaviour
 
         if (wasCorrect)
         {
+            OnCorrectNote?.Invoke();
             BackgroundMusicManager.Instance?.Duck();
             StartCoroutine(InputCooldown());
         }
-        else if (wrongNoteClip != null)
+        else
         {
-            audioSource.PlayOneShot(wrongNoteClip);
+            OnWrongNote?.Invoke();
+            if (wrongNoteClip != null)
+                audioSource.PlayOneShot(wrongNoteClip);
         }
     }
 

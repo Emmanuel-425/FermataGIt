@@ -1,4 +1,6 @@
 using UnityEngine;
+using System;
+using Random = UnityEngine.Random;
 
 public class SequenceZone : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class SequenceZone : MonoBehaviour
     private bool isActive;
     private bool isBridgeActive;
     private bool hasSolvedOnce;
+
+    public event Action OnSequenceCompleted;
 
     private void Awake()
     {
@@ -81,6 +85,8 @@ public class SequenceZone : MonoBehaviour
     }
 
     public bool HasSolvedOnce() => hasSolvedOnce;
+
+    public MusicPlatform[] GetPlatforms() => platforms;
 
     public bool IsAttemptInProgress()
         => isActive && currentProgress > 0 && !isBridgeActive;
@@ -158,6 +164,8 @@ public class SequenceZone : MonoBehaviour
             audioSource.PlayOneShot(victoryJingle);
 
         isBridgeActive = true;
+
+        OnSequenceCompleted?.Invoke();
 
         foreach (MusicPlatform platform in platforms)
         {

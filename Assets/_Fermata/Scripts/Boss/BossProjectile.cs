@@ -10,11 +10,10 @@ public class BossProjectile : MonoBehaviour
     [SerializeField] private float maxLifeTime = 6f;
 
     [Header("Audio")]
-    [SerializeField] private AudioClip[] noteClips; // 0=Do 1=Re 2=Mi 3=Fa
+    [SerializeField] private AudioClip[] noteClips;
 
     public NoteType Note { get; private set; }
 
-    // Set by BossAttackController
     public float PassingLineY { get; set; }
 
     public UnityEvent<BossProjectile> onCrossedLine;
@@ -24,7 +23,6 @@ public class BossProjectile : MonoBehaviour
     private Vector2 moveDirection;
 
     private bool crossed;
-
     private float timer;
 
     private void Awake()
@@ -63,7 +61,6 @@ public class BossProjectile : MonoBehaviour
         {
             if (moveDirection.y > 0f)
             {
-                // Projectile travelling upward
                 if (transform.position.y >= PassingLineY)
                 {
                     crossed = true;
@@ -74,7 +71,6 @@ public class BossProjectile : MonoBehaviour
             }
             else
             {
-                // Projectile travelling downward
                 if (transform.position.y <= PassingLineY)
                 {
                     crossed = true;
@@ -89,6 +85,22 @@ public class BossProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player"))
+            return;
+
+        PlayerBossHealth playerHealth =
+            other.GetComponent<PlayerBossHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeProjectileDamage();
+        }
+
+        Destroy(gameObject);
     }
 
     public void Deflect()

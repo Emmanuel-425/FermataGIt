@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbf556fad2f47d4b8cb5b6f56768823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
-  maxHP: 1
+  maxHP: 30
   onPhaseTwo:
     m_PersistentCalls:
       m_Calls:
@@ -846,7 +846,12 @@ MonoBehaviour:
   spawnPoint: {fileID: 980533419}
   passingLineY: 10
   phase1Interval: 3
-  phase2Interval: 1.5
+  phase2ComboInterval: 5
+  noteCountSpeeds:
+  - 5
+  - 4.5
+  - 2
+  - 1
   player: {fileID: 298866035293379740}
   speedController: {fileID: 1785477747}
   noteInputHandler: {fileID: 1649756658}

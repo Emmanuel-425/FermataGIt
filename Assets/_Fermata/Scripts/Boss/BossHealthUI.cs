@@ -48,14 +48,5 @@ public class BossHealthUI : MonoBehaviour
     public void OnPhaseTwo()
     {
         isPhaseTwo = true;
-
-        // Reset all hearts to full opacity for phase 2
-        for (int i = 0; i < heartsPerPhase; i++)
-        {
-            hearts[i].gameObject.SetActive(true);
-            Color c = hearts[i].color;
-            c.a = 1f;
-            hearts[i].color = c;
-        }
     }
 }

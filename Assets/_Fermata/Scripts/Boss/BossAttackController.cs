@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BossAttackController : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class BossAttackController : MonoBehaviour
     [Header("Passing Line")]
     [SerializeField] private float passingLineY = 3f;
 
-    [Header("Phase Intervals")]
+    [Header("Phase 1")]
     [SerializeField] private float phase1Interval = 1.2f;
-    [SerializeField] private float phase2Interval = 0.9f;
+
+    [Header("Phase 2")]
+    [SerializeField] private float phase2ComboInterval = 2f;
+    [SerializeField] private float[] noteCountSpeeds = { 5f, 4.5f, 3.5f, 2.5f }; // index 0=1note, 1=2note, 2=3note, 3=4note
 
     [Header("References")]
     [SerializeField] private Transform player;
@@ -19,15 +23,14 @@ public class BossAttackController : MonoBehaviour
     [SerializeField] private BossNoteInputHandler noteInputHandler;
 
     private float timer;
-    private float currentInterval;
     private bool active;
+    private bool isPhaseTwo;
 
     private NoteType[] allNotes;
 
     private void Awake()
     {
         allNotes = (NoteType[])System.Enum.GetValues(typeof(NoteType));
-        currentInterval = phase1Interval;
     }
 
     public void StartAttacking()
@@ -36,37 +39,73 @@ public class BossAttackController : MonoBehaviour
         timer = 0f;
     }
 
-    public void StopAttacking() => active = false;
+    public void StopAttacking()
+    {
+        active = false;
+        StopAllCoroutines();
+    }
 
-    public void EnterPhaseTwo() => currentInterval = phase2Interval;
+    public void EnterPhaseTwoAttack()
+    {
+        isPhaseTwo = true;
+        StartCoroutine(PhaseTwoLoop());
+    }
 
     private void Update()
     {
-        if (!active) return;
+        if (!active || isPhaseTwo) return;
 
         timer += Time.deltaTime;
-        if (timer >= currentInterval)
+        if (timer >= phase1Interval)
         {
             timer = 0f;
-            SpawnProjectile();
+            SpawnProjectile(1);
         }
     }
 
-    private void SpawnProjectile()
+    private IEnumerator PhaseTwoLoop()
+    {
+        while (active)
+        {
+            int comboSize = Random.Range(1, 5); // 1 to 4
+            SpawnProjectile(comboSize);
+            yield return new WaitForSeconds(phase2ComboInterval);
+        }
+    }
+
+    private void SpawnProjectile(int noteCount)
     {
         GameObject go = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
         BossProjectile proj = go.GetComponent<BossProjectile>();
 
-        NoteType note = allNotes[Random.Range(0, allNotes.Length)];
+        NoteType[] notes = GetUniqueNotes(noteCount);
+
+        float speed = noteCountSpeeds[Mathf.Clamp(noteCount - 1, 0, noteCountSpeeds.Length - 1)];
 
         proj.PassingLineY = passingLineY;
         proj.PlayerY = player.position.y;
-        proj.Init(note, player.position);
+        proj.Init(notes, player.position, speed);
         proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
         proj.onHitPlayer.AddListener(OnProjectileHitPlayer);
         proj.onCrossedLine.AddListener(OnProjectileCrossedLine);
 
         noteInputHandler?.RegisterProjectile(proj);
+    }
+
+    private NoteType[] GetUniqueNotes(int count)
+    {
+        NoteType[] shuffled = (NoteType[])allNotes.Clone();
+        for (int i = shuffled.Length - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
+        }
+
+        NoteType[] result = new NoteType[count];
+        for (int i = 0; i < count; i++)
+            result[i] = shuffled[i];
+
+        return result;
     }
 
     private void OnProjectilePassedPlayer(BossProjectile proj)

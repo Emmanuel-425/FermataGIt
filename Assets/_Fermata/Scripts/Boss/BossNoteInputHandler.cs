@@ -37,12 +37,23 @@ public class BossNoteInputHandler : MonoBehaviour
 
         BossProjectile target = projectileQueue[0];
 
-        if (played == target.Note)
+        if (played == target.CurrentNote)
         {
-            projectileQueue.RemoveAt(0);
-            target.Deflect();
-            bossHealth?.TakeDamage();
             speedController?.ApplyRecovery();
+
+            bool isLastNote = target.CurrentNoteIndex >= target.NoteCount - 1;
+
+            if (isLastNote)
+            {
+                projectileQueue.RemoveAt(0);
+                int damage = target.NoteCount;
+                target.Deflect();
+                bossHealth?.TakeDamage(damage);
+            }
+            else
+            {
+                target.AdvanceNote();
+            }
         }
         else
         {

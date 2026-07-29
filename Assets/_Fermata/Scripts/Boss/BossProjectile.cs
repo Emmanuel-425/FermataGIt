@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class BossProjectile : MonoBehaviour
 {
@@ -8,18 +9,22 @@ public class BossProjectile : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip[] noteClips; // Element 0=Do, 1=Re, 2=Mi, 3=Fa
+    [SerializeField] private float notePreviewDelay = 0.5f;
 
-    public NoteType Note { get; private set; }
     public float PassingLineY { get; set; }
     public float PlayerY { get; set; }
 
-    private Vector2 moveDirection;
+    public NoteType[] Notes { get; private set; }
+    public int NoteCount => Notes.Length;
+    public int CurrentNoteIndex { get; private set; }
+    public NoteType CurrentNote => Notes[CurrentNoteIndex];
 
     public UnityEvent<BossProjectile> onPassedPlayer;
     public UnityEvent<BossProjectile> onCrossedLine;
     public UnityEvent<BossProjectile> onHitPlayer;
 
     private AudioSource audioSource;
+    private Vector2 moveDirection;
     private bool passedPlayer;
     private bool crossed;
 
@@ -30,14 +35,35 @@ public class BossProjectile : MonoBehaviour
         audioSource.spatialBlend = 0f;
     }
 
-    public void Init(NoteType note, Vector2 targetPosition)
+    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed = 4f)
     {
-        Note = note;
+        Notes = notes;
+        CurrentNoteIndex = 0;
+        speed = projectileSpeed;
         moveDirection = (targetPosition - (Vector2)transform.position).normalized;
 
-        int index = (int)note;
-        if (noteClips != null && index < noteClips.Length && noteClips[index] != null)
-            audioSource.PlayOneShot(noteClips[index]);
+        StartCoroutine(PlayNotePreview());
+    }
+
+    private IEnumerator PlayNotePreview()
+    {
+        for (int i = 0; i < Notes.Length; i++)
+        {
+            PlayNoteSound(i);
+            yield return new WaitForSeconds(notePreviewDelay);
+        }
+    }
+
+    public void AdvanceNote()
+    {
+        CurrentNoteIndex++;
+    }
+
+    private void PlayNoteSound(int index)
+    {
+        int clipIndex = (int)Notes[index];
+        if (noteClips != null && clipIndex < noteClips.Length && noteClips[clipIndex] != null)
+            audioSource.PlayOneShot(noteClips[clipIndex]);
     }
 
     private void Update()

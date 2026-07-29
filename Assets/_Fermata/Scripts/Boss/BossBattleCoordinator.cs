@@ -7,7 +7,7 @@ public class BossBattleCoordinator : MonoBehaviour
 
     private void Start()
     {
-        bossHealth.onPhaseTwo.AddListener(attackController.EnterPhaseTwo);
+        bossHealth.onPhaseTwo.AddListener(attackController.EnterPhaseTwoAttack);
         bossHealth.onDeath.AddListener(attackController.StopAttacking);
         attackController.StartAttacking();
     }

@@ -17,9 +17,9 @@ public class BossHealth : MonoBehaviour
 
     private void Awake() => currentHP = maxHP;
 
-    public void TakeDamage()
+    public void TakeDamage(int amount = 1)
     {
-        currentHP--;
+        currentHP -= amount;
         Debug.Log($"Boss HP: {currentHP}");
         onDamaged?.Invoke(currentHP);
 

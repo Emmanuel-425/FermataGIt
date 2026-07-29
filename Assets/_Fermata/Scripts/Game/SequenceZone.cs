@@ -66,6 +66,8 @@ public class SequenceZone : MonoBehaviour
 
     public void Deactivate()
     {
+        bool wasInBridge = isBridgeActive;
+
         isActive = false;
         currentProgress = 0;
         isBridgeActive = false;
@@ -73,6 +75,9 @@ public class SequenceZone : MonoBehaviour
 
         CancelInvoke(nameof(ResetSequence));
         CancelInvoke(nameof(FinishBridgeActivation));
+
+        if (!wasInBridge)
+            HideAllPlatforms();
     }
 
     public bool HasSolvedOnce() => hasSolvedOnce;

@@ -6,18 +6,26 @@ public class BossProjectile : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed = 4f;
 
+    [Header("Lifetime")]
+    [SerializeField] private float maxLifeTime = 6f;
+
     [Header("Audio")]
-    [SerializeField] private AudioClip[] noteClips; // Element 0=Do, 1=Re, 2=Mi, 3=Fa
+    [SerializeField] private AudioClip[] noteClips; // 0=Do 1=Re 2=Mi 3=Fa
 
     public NoteType Note { get; private set; }
 
-    // Assigned by BossAttackController after spawn
+    // Set by BossAttackController
     public float PassingLineY { get; set; }
 
     public UnityEvent<BossProjectile> onCrossedLine;
 
     private AudioSource audioSource;
+
+    private Vector2 moveDirection;
+
     private bool crossed;
+
+    private float timer;
 
     private void Awake()
     {
@@ -26,23 +34,59 @@ public class BossProjectile : MonoBehaviour
         audioSource.spatialBlend = 0f;
     }
 
-    public void Init(NoteType note)
+    public void Init(NoteType note, Vector2 targetPosition)
     {
         Note = note;
 
+        moveDirection =
+            (targetPosition - (Vector2)transform.position).normalized;
+
         int index = (int)note;
-        if (noteClips != null && index < noteClips.Length && noteClips[index] != null)
+
+        if (noteClips != null &&
+            index >= 0 &&
+            index < noteClips.Length &&
+            noteClips[index] != null)
+        {
             audioSource.PlayOneShot(noteClips[index]);
+        }
     }
 
     private void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.position +=
+            (Vector3)(moveDirection * speed * Time.deltaTime);
 
-        if (!crossed && transform.position.y >= PassingLineY)
+        timer += Time.deltaTime;
+
+        if (!crossed)
         {
-            crossed = true;
-            onCrossedLine?.Invoke(this);
+            if (moveDirection.y > 0f)
+            {
+                // Projectile travelling upward
+                if (transform.position.y >= PassingLineY)
+                {
+                    crossed = true;
+                    onCrossedLine?.Invoke(this);
+                    Destroy(gameObject);
+                    return;
+                }
+            }
+            else
+            {
+                // Projectile travelling downward
+                if (transform.position.y <= PassingLineY)
+                {
+                    crossed = true;
+                    onCrossedLine?.Invoke(this);
+                    Destroy(gameObject);
+                    return;
+                }
+            }
+        }
+
+        if (timer >= maxLifeTime)
+        {
             Destroy(gameObject);
         }
     }

@@ -47,7 +47,7 @@ public class BossNoteInputHandler : MonoBehaviour
             {
                 projectileQueue.RemoveAt(0);
                 int damage = target.NoteCount;
-                target.Deflect();
+                target.DeflectToBoss();
                 bossHealth?.TakeDamage(damage);
             }
             else
@@ -58,8 +58,7 @@ public class BossNoteInputHandler : MonoBehaviour
         else
         {
             projectileQueue.RemoveAt(0);
-            target.Deflect();
-            playerHealth?.TakeWrongNoteDamage();
+            target.DeflectToPlayer();
         }
     }
 }

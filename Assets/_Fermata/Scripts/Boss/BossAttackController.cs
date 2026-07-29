@@ -15,12 +15,14 @@ public class BossAttackController : MonoBehaviour
 
     [Header("Phase 2")]
     [SerializeField] private float phase2ComboInterval = 2f;
-    [SerializeField] private float[] noteCountSpeeds = { 5f, 4.5f, 3.5f, 2.5f }; // index 0=1note, 1=2note, 2=3note, 3=4note
+    [SerializeField] private float[] noteCountSpeeds = { 5f, 4.5f, 3.5f, 2.5f };
 
     [Header("References")]
     [SerializeField] private Transform player;
+    [SerializeField] private Transform boss;
     [SerializeField] private PlayerSpeedController speedController;
     [SerializeField] private BossNoteInputHandler noteInputHandler;
+    [SerializeField] private BossHealth bossHealth;
 
     private float timer;
     private bool active;
@@ -67,7 +69,7 @@ public class BossAttackController : MonoBehaviour
     {
         while (active)
         {
-            int comboSize = Random.Range(1, 5); // 1 to 4
+            int comboSize = Random.Range(1, 5);
             SpawnProjectile(comboSize);
             yield return new WaitForSeconds(phase2ComboInterval);
         }
@@ -79,15 +81,15 @@ public class BossAttackController : MonoBehaviour
         BossProjectile proj = go.GetComponent<BossProjectile>();
 
         NoteType[] notes = GetUniqueNotes(noteCount);
-
         float speed = noteCountSpeeds[Mathf.Clamp(noteCount - 1, 0, noteCountSpeeds.Length - 1)];
 
         proj.PassingLineY = passingLineY;
         proj.PlayerY = player.position.y;
-        proj.Init(notes, player.position, speed);
+        proj.Init(notes, player.position, speed, boss, player);
         proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
         proj.onHitPlayer.AddListener(OnProjectileHitPlayer);
         proj.onCrossedLine.AddListener(OnProjectileCrossedLine);
+        proj.onHitBoss.AddListener(OnProjectileHitBoss);
 
         noteInputHandler?.RegisterProjectile(proj);
     }
@@ -121,5 +123,10 @@ public class BossAttackController : MonoBehaviour
     private void OnProjectileCrossedLine(BossProjectile proj)
     {
         speedController?.ApplySlow();
+    }
+
+    private void OnProjectileHitBoss(BossProjectile proj)
+    {
+        // damage is handled by BossNoteInputHandler when deflecting
     }
 }

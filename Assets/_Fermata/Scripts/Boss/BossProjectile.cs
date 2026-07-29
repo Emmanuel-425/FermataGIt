@@ -6,9 +6,11 @@ public class BossProjectile : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float speed = 4f;
+    [SerializeField] private float wrongNoteSpeed = 12f;
+    [SerializeField] private float correctNoteSpeed = 10f;
 
     [Header("Audio")]
-    [SerializeField] private AudioClip[] noteClips; // Element 0=Do, 1=Re, 2=Mi, 3=Fa
+    [SerializeField] private AudioClip[] noteClips;
     [SerializeField] private float notePreviewDelay = 0.5f;
 
     public float PassingLineY { get; set; }
@@ -22,11 +24,17 @@ public class BossProjectile : MonoBehaviour
     public UnityEvent<BossProjectile> onPassedPlayer;
     public UnityEvent<BossProjectile> onCrossedLine;
     public UnityEvent<BossProjectile> onHitPlayer;
+    public UnityEvent<BossProjectile> onHitBoss;
 
     private AudioSource audioSource;
     private Vector2 moveDirection;
     private bool passedPlayer;
     private bool crossed;
+    private bool redirected;
+    private bool redirectedToPlayer;
+
+    private Transform bossTransform;
+    private Transform playerTransform;
 
     private void Awake()
     {
@@ -35,11 +43,13 @@ public class BossProjectile : MonoBehaviour
         audioSource.spatialBlend = 0f;
     }
 
-    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed = 4f)
+    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed, Transform boss, Transform player)
     {
         Notes = notes;
         CurrentNoteIndex = 0;
         speed = projectileSpeed;
+        bossTransform = boss;
+        playerTransform = player;
         moveDirection = (targetPosition - (Vector2)transform.position).normalized;
 
         StartCoroutine(PlayNotePreview());
@@ -59,6 +69,23 @@ public class BossProjectile : MonoBehaviour
         CurrentNoteIndex++;
     }
 
+    public void DeflectToBoss()
+    {
+        redirected = true;
+        StopAllCoroutines();
+        speed = correctNoteSpeed;
+        moveDirection = (bossTransform.position - transform.position).normalized;
+    }
+
+    public void DeflectToPlayer()
+    {
+        redirected = true;
+        redirectedToPlayer = true;
+        StopAllCoroutines();
+        speed = wrongNoteSpeed;
+        moveDirection = (playerTransform.position - transform.position).normalized;
+    }
+
     private void PlayNoteSound(int index)
     {
         int clipIndex = (int)Notes[index];
@@ -70,13 +97,22 @@ public class BossProjectile : MonoBehaviour
     {
         transform.Translate(moveDirection * speed * Time.deltaTime);
 
-        if (!passedPlayer && transform.position.y >= PlayerY)
+        if (!redirected)
         {
-            passedPlayer = true;
-            onPassedPlayer?.Invoke(this);
-        }
+            if (!passedPlayer && transform.position.y >= PlayerY)
+            {
+                passedPlayer = true;
+                onPassedPlayer?.Invoke(this);
+            }
 
-        if (!crossed && transform.position.y >= PassingLineY)
+            if (!crossed && transform.position.y >= PassingLineY)
+            {
+                crossed = true;
+                onCrossedLine?.Invoke(this);
+                Destroy(gameObject);
+            }
+        }
+        else if (redirectedToPlayer && !crossed && transform.position.y >= PassingLineY)
         {
             crossed = true;
             onCrossedLine?.Invoke(this);
@@ -84,17 +120,20 @@ public class BossProjectile : MonoBehaviour
         }
     }
 
-    public void Deflect()
-    {
-        Destroy(gameObject);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (redirected && other.CompareTag("Boss"))
+        {
+            onHitBoss?.Invoke(this);
+            Destroy(gameObject);
+            return;
+        }
 
-        other.GetComponent<PlayerBossHealth>()?.TakeWrongNoteDamage();
-        onHitPlayer?.Invoke(this);
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerBossHealth>()?.TakeWrongNoteDamage();
+            onHitPlayer?.Invoke(this);
+            Destroy(gameObject);
+        }
     }
 }

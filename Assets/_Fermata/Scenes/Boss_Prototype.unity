@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   maxHP: 30
-  hurtClip: {fileID: 0}
+  hurtClip: {fileID: 8300000, guid: 9d4066b81faa90d4a873db8a9d330a22, type: 3}
   onPhaseTwo:
     m_PersistentCalls:
       m_Calls:
@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBossHealth
   maxHP: 10
   wrongNoteDamage: 1
-  hurtClip: {fileID: 0}
+  hurtClip: {fileID: 8300000, guid: cf259f46bd6d81f42840a52978968a15, type: 3}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

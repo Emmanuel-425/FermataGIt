@@ -31,13 +31,9 @@ public class SequenceZone : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0f;
 
-        NoteType[] allNotes =
-            (NoteType[])System.Enum.GetValues(typeof(NoteType));
-
         sequence = new NoteType[platforms.Length];
-
         for (int i = 0; i < platforms.Length; i++)
-            sequence[i] = allNotes[i];
+            sequence[i] = platforms[i].GetNote();
 
         Shuffle(sequence);
 

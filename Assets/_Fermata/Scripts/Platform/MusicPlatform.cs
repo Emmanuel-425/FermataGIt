@@ -11,6 +11,11 @@ public class MusicPlatform : MonoBehaviour
     [Header("Listen Settings")]
     [SerializeField] private float listenLineWidth = 0.05f;
 
+    [Header("Opacity")]
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float guessingOpacity = 0.4f;
+
     private SpriteRenderer spriteRenderer;
     private Collider2D platformCollider;
     private LineRenderer listenOutline;
@@ -42,7 +47,11 @@ public class MusicPlatform : MonoBehaviour
     public void RevealForSequence()
     {
         spriteRenderer.enabled = true;
+
+        SetOpacity(guessingOpacity);
+
         platformCollider.enabled = false;
+
         listenOutline.enabled = false;
 
         CancelInvoke(nameof(Hide));
@@ -53,6 +62,9 @@ public class MusicPlatform : MonoBehaviour
     public void ActivateForCrossing(float duration)
     {
         spriteRenderer.enabled = true;
+
+        SetOpacity(1f);
+
         platformCollider.enabled = true;
 
         listenOutline.enabled = false;
@@ -70,9 +82,17 @@ public class MusicPlatform : MonoBehaviour
         CancelInvoke(nameof(Hide));
         CancelInvoke(nameof(HideListenOutline));
 
-        if (spriteRenderer != null) spriteRenderer.enabled = false;
-        if (platformCollider != null) platformCollider.enabled = false;
-        if (listenOutline != null) listenOutline.enabled = false;
+        if (spriteRenderer != null)
+        {
+            SetOpacity(1f);
+            spriteRenderer.enabled = false;
+        }
+
+        if (platformCollider != null)
+            platformCollider.enabled = false;
+
+        if (listenOutline != null)
+            listenOutline.enabled = false;
     }
 
     public void ListenReveal(float duration)
@@ -88,6 +108,16 @@ public class MusicPlatform : MonoBehaviour
 
         CancelInvoke(nameof(HideListenOutline));
         Invoke(nameof(HideListenOutline), duration);
+    }
+
+    private void SetOpacity(float alpha)
+    {
+        if (spriteRenderer == null)
+            return;
+
+        Color color = spriteRenderer.color;
+        color.a = alpha;
+        spriteRenderer.color = color;
     }
 
     private void PlayNoteSound()
@@ -140,29 +170,10 @@ public class MusicPlatform : MonoBehaviour
 
         Bounds bounds = spriteRenderer.bounds;
 
-        Vector3 topLeft = new Vector3(
-            bounds.min.x,
-            bounds.max.y,
-            0f
-        );
-
-        Vector3 topRight = new Vector3(
-            bounds.max.x,
-            bounds.max.y,
-            0f
-        );
-
-        Vector3 bottomRight = new Vector3(
-            bounds.max.x,
-            bounds.min.y,
-            0f
-        );
-
-        Vector3 bottomLeft = new Vector3(
-            bounds.min.x,
-            bounds.min.y,
-            0f
-        );
+        Vector3 topLeft = new Vector3(bounds.min.x, bounds.max.y, 0f);
+        Vector3 topRight = new Vector3(bounds.max.x, bounds.max.y, 0f);
+        Vector3 bottomRight = new Vector3(bounds.max.x, bounds.min.y, 0f);
+        Vector3 bottomLeft = new Vector3(bounds.min.x, bounds.min.y, 0f);
 
         listenOutline.SetPosition(0, topLeft);
         listenOutline.SetPosition(1, topRight);

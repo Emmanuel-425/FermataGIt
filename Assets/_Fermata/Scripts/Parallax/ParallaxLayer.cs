@@ -4,8 +4,10 @@ public class ParallaxLayer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private Transform spriteA;
-    [SerializeField] private Transform spriteB;
+
+    [SerializeField] private Transform leftSprite;
+    [SerializeField] private Transform centerSprite;
+    [SerializeField] private Transform rightSprite;
 
     [Header("Parallax")]
     [Range(0f, 1f)]
@@ -19,37 +21,30 @@ public class ParallaxLayer : MonoBehaviour
         if (cameraTransform == null)
             cameraTransform = Camera.main.transform;
 
-        if (spriteA == null || spriteB == null)
-        {
-            Debug.LogError($"{name}: Please assign Sprite A and Sprite B.");
-            enabled = false;
-            return;
-        }
-
-        SpriteRenderer sr = spriteA.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = centerSprite.GetComponent<SpriteRenderer>();
 
         if (sr == null)
         {
-            Debug.LogError($"{name}: Sprite A needs a SpriteRenderer.");
+            Debug.LogError("Center sprite needs a SpriteRenderer.");
             enabled = false;
             return;
         }
 
-        // Get sprite width in world units
         spriteWidth = sr.bounds.size.x;
 
-        // Automatically place the two sprites side by side
-        spriteA.localPosition = Vector3.zero;
-        spriteB.localPosition = new Vector3(spriteWidth, 0f, 0f);
+        // Automatically place the sprites
+        centerSprite.localPosition = Vector3.zero;
+        leftSprite.localPosition = Vector3.left * spriteWidth;
+        rightSprite.localPosition = Vector3.right * spriteWidth;
 
         lastCameraX = cameraTransform.position.x;
     }
 
     private void LateUpdate()
     {
-        // ==========================
-        // PARALLAX (Horizontal Only)
-        // ==========================
+        // -----------------------
+        // PARALLAX
+        // -----------------------
 
         float deltaX = cameraTransform.position.x - lastCameraX;
 
@@ -57,42 +52,78 @@ public class ParallaxLayer : MonoBehaviour
 
         lastCameraX = cameraTransform.position.x;
 
-        // ==========================
-        // INFINITE SCROLL
-        // ==========================
+        // -----------------------
+        // LOOPING
+        // -----------------------
 
-        Transform left;
-        Transform right;
+        Transform[] sprites =
+        {
+            leftSprite,
+            centerSprite,
+            rightSprite
+        };
 
-        if (spriteA.position.x < spriteB.position.x)
+        float leftMost = sprites[0].position.x;
+        float rightMost = sprites[0].position.x;
+
+        Transform left = sprites[0];
+        Transform right = sprites[0];
+
+        foreach (Transform t in sprites)
         {
-            left = spriteA;
-            right = spriteB;
-        }
-        else
-        {
-            left = spriteB;
-            right = spriteA;
+            if (t.position.x < leftMost)
+            {
+                leftMost = t.position.x;
+                left = t;
+            }
+
+            if (t.position.x > rightMost)
+            {
+                rightMost = t.position.x;
+                right = t;
+            }
         }
 
         float cameraX = cameraTransform.position.x;
 
-        // Move the left sprite to the right
-        if (cameraX > right.position.x)
+        // Moving Right
+        if (cameraX > centerSprite.position.x + spriteWidth * 0.5f)
         {
             left.position = new Vector3(
                 right.position.x + spriteWidth,
                 left.position.y,
                 left.position.z);
+
+            RotateRight();
         }
 
-        // Move the right sprite to the left
-        if (cameraX < left.position.x)
+        // Moving Left
+        if (cameraX < centerSprite.position.x - spriteWidth * 0.5f)
         {
             right.position = new Vector3(
                 left.position.x - spriteWidth,
                 right.position.y,
                 right.position.z);
+
+            RotateLeft();
         }
+    }
+
+    private void RotateRight()
+    {
+        Transform oldLeft = leftSprite;
+
+        leftSprite = centerSprite;
+        centerSprite = rightSprite;
+        rightSprite = oldLeft;
+    }
+
+    private void RotateLeft()
+    {
+        Transform oldRight = rightSprite;
+
+        rightSprite = centerSprite;
+        centerSprite = leftSprite;
+        leftSprite = oldRight;
     }
 }

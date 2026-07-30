@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Camera Support")]
+    [SerializeField] private float fallSpeedThreshold = -0.5f;
+
     [Header("Footstep Sound")]
     [SerializeField] private AudioClip footstepClip;
 
@@ -72,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
 
         CheckGround();
 
+        HandleFacingDirection();
+
+        HandleFallingState();
+
         HandleWalkingSound();
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
@@ -96,6 +103,30 @@ public class PlayerMovement : MonoBehaviour
             horizontalInput * currentMoveSpeed,
             rb.linearVelocity.y
         );
+    }
+
+    private void HandleFacingDirection()
+    {
+        // Rotate on Y-axis so CameraFollowTarget knows which direction we face
+        if (horizontalInput > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else if (horizontalInput < 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+    }
+
+    private void HandleFallingState()
+    {
+        // Notify CameraManager when falling downwards in the air
+        bool isFalling = rb.linearVelocity.y < fallSpeedThreshold && !isGrounded;
+
+        if (CameraManager.instance != null)
+        {
+            CameraManager.instance.SetFalling(isFalling);
+        }
     }
 
     private void Jump()

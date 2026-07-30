@@ -8,6 +8,11 @@ public class BossNoteInputHandler : MonoBehaviour
     [SerializeField] private PlayerBossHealth playerHealth;
     [SerializeField] private PlayerSpeedController speedController;
 
+    [Header("Ripple")]
+    [SerializeField] private GameObject smallRipplePrefab;
+    [SerializeField] private GameObject bigRipplePrefab;
+    [SerializeField] private Transform playerTransform;
+
     private readonly List<BossProjectile> projectileQueue = new List<BossProjectile>();
 
     public void RegisterProjectile(BossProjectile projectile)
@@ -32,6 +37,9 @@ public class BossNoteInputHandler : MonoBehaviour
 
     private void TryNote(NoteType played)
     {
+        if (smallRipplePrefab != null && playerTransform != null)
+            Instantiate(smallRipplePrefab, playerTransform.position, Quaternion.identity);
+
         if (projectileQueue.Count == 0) return;
 
         BossProjectile target = projectileQueue[0];
@@ -46,6 +54,9 @@ public class BossNoteInputHandler : MonoBehaviour
             {
                 projectileQueue.RemoveAt(0);
                 target.DeflectToBoss();
+
+                if (bigRipplePrefab != null && playerTransform != null)
+                    Instantiate(bigRipplePrefab, playerTransform.position, Quaternion.identity);
             }
             else
             {
@@ -55,7 +66,9 @@ public class BossNoteInputHandler : MonoBehaviour
         else
         {
             projectileQueue.RemoveAt(0);
-            target.DeflectToPlayer();
+            if (smallRipplePrefab != null)
+                Instantiate(smallRipplePrefab, target.transform.position, Quaternion.identity);
+            target.DeflectToPlayer(playerTransform.position);
         }
     }
 }

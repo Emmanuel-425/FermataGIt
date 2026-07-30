@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Fermata/Scenes/Level_Prototype.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/_Fermata/Scenes/MainMenu_Prototype.unity
     guid: 2f67a259113ce8141993ba874d39762a
+  - enabled: 1
+    path: Assets/_Fermata/Scenes/Level_Prototype.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/_Fermata/Scenes/Boss_Prototype.unity
     guid: 97ee02f5d12aec04eb8baa99e3c89720

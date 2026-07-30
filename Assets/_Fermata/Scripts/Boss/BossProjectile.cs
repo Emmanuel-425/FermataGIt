@@ -81,13 +81,13 @@ public class BossProjectile : MonoBehaviour
         moveDirection = (bossTransform.position - transform.position).normalized;
     }
 
-    public void DeflectToPlayer()
+    public void DeflectToPlayer(Vector2 playerPosition)
     {
         redirected = true;
         redirectedToPlayer = true;
         StopAllCoroutines();
         speed = wrongNoteSpeed;
-        moveDirection = (playerTransform.position - transform.position).normalized;
+        moveDirection = (playerPosition - (Vector2)transform.position).normalized;
     }
 
     private void PlayNoteSound(int index)

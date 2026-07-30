@@ -24,6 +24,9 @@ public class BossAttackController : MonoBehaviour
     [SerializeField] private BossNoteInputHandler noteInputHandler;
     [SerializeField] private BossHealth bossHealth;
 
+    [Header("Ripple")]
+    [SerializeField] private GameObject bigRipplePrefab;
+
     private float timer;
     private bool active;
     private bool isPhaseTwo;
@@ -92,6 +95,9 @@ public class BossAttackController : MonoBehaviour
         proj.onHitBoss.AddListener(OnProjectileHitBoss);
 
         noteInputHandler?.RegisterProjectile(proj);
+
+        if (bigRipplePrefab != null)
+            Instantiate(bigRipplePrefab, spawnPoint.position, Quaternion.identity);
     }
 
     private NoteType[] GetUniqueNotes(int count)

@@ -106,15 +106,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossProjectile
   speed: 4
+  wrongNoteSpeed: 12
+  correctNoteSpeed: 10
   noteClips:
   - {fileID: 8300000, guid: 310e268dfce4e0b40954d13d9de0328c, type: 3}
   - {fileID: 8300000, guid: 9bcbfad9714f42b42a07e98f59dd300f, type: 3}
   - {fileID: 8300000, guid: df0045da0824b004cb51be9a89a1dcaa, type: 3}
   - {fileID: 8300000, guid: 6f46b2c4a3ce68246a6c5a8b523c6d9e, type: 3}
+  notePreviewDelay: 0.5
+  smallRipplePrefab: {fileID: 4338832308181203669, guid: 12e47ca1a70753b46b3c240783575128, type: 3}
   onPassedPlayer:
     m_PersistentCalls:
       m_Calls: []
   onCrossedLine:
+    m_PersistentCalls:
+      m_Calls: []
+  onHitPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  onHitBoss:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &3803133318825077776

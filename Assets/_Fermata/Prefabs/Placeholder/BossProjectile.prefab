@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.84313726, g: 0.73158497, b: 0.11764707, a: 1}
@@ -109,12 +109,11 @@ MonoBehaviour:
   wrongNoteSpeed: 12
   correctNoteSpeed: 10
   noteClips:
-  - {fileID: 8300000, guid: 310e268dfce4e0b40954d13d9de0328c, type: 3}
-  - {fileID: 8300000, guid: 9bcbfad9714f42b42a07e98f59dd300f, type: 3}
-  - {fileID: 8300000, guid: df0045da0824b004cb51be9a89a1dcaa, type: 3}
-  - {fileID: 8300000, guid: 6f46b2c4a3ce68246a6c5a8b523c6d9e, type: 3}
+  - {fileID: 8300000, guid: 5bc004860fae2ae4680e331aebf77ae5, type: 3}
+  - {fileID: 8300000, guid: 85af12d316f5bc047b7512da7b0bddaa, type: 3}
+  - {fileID: 8300000, guid: 4c3e5f905095c39478f42660e8384ee8, type: 3}
+  - {fileID: 8300000, guid: 3af6ec4f1904fe743a287594fcfef050, type: 3}
   notePreviewDelay: 0.5
-  smallRipplePrefab: {fileID: 4338832308181203669, guid: 12e47ca1a70753b46b3c240783575128, type: 3}
   onPassedPlayer:
     m_PersistentCalls:
       m_Calls: []

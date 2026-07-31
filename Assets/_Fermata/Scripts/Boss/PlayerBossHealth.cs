@@ -37,7 +37,7 @@ public class PlayerBossHealth : MonoBehaviour
         if (currentHP <= 0)
         {
             onDeath?.Invoke();
-            SceneManager.LoadScene("Level_Prototype");
+            SceneManager.LoadScene("Level 1");
         }
     }
 }

@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private AudioSource audioSource;
+    private Animator animator;
 
     private float horizontalInput;
 
@@ -43,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         audioSource = GetComponent<AudioSource>();
 
@@ -81,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
 
         HandleWalkingSound();
 
+        UpdateAnimator();
+
         if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
         {
             Jump();
@@ -107,7 +111,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFacingDirection()
     {
-        // Rotate on Y-axis so CameraFollowTarget knows which direction we face
         if (horizontalInput > 0)
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -120,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFallingState()
     {
-        // Notify CameraManager when falling downwards in the air
         bool isFalling = rb.linearVelocity.y < fallSpeedThreshold && !isGrounded;
 
         if (CameraManager.instance != null)
@@ -172,6 +174,15 @@ public class PlayerMovement : MonoBehaviour
                 audioSource.Stop();
             }
         }
+    }
+
+    private void UpdateAnimator()
+    {
+        if (animator == null)
+            return;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        animator.SetBool("Grounded", isGrounded);
     }
 
     private void PlaySound(AudioClip clip)

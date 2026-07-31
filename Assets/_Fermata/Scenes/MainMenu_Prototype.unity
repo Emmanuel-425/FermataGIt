@@ -6804,7 +6804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   gameScene: Level 1
-  creditsScene: Boss 1
+  creditsScene: Credits_Prototype
 --- !u!4 &1696933799
 Transform:
   m_ObjectHideFlags: 0

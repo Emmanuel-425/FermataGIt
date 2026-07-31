@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Fermata/Scenes/MainMenu_Prototype.unity
     guid: 2f67a259113ce8141993ba874d39762a
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Fermata/Scenes/Level_Prototype.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Fermata/Scenes/Boss_Prototype.unity
     guid: 97ee02f5d12aec04eb8baa99e3c89720
   - enabled: 1
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Fermata/Scenes/Level 1.unity
     guid: e8b378b203191d141a129d654c53703c
+  - enabled: 1
+    path: Assets/_Fermata/Scenes/Boss 1.unity
+    guid: 6e052c7729c5cea4ea816e943b4a9555
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

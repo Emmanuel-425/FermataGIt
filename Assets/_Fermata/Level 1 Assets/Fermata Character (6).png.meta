@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: b1014b7426a7bdb4a8f347de9c75d443
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4443597573044635121
+    second: Fermata Character (6)_0
+  - first:
+      213: -6386320587028522090
+    second: Fermata Character (6)_1
+  - first:
+      213: 6018125841578972950
+    second: Fermata Character (6)_2
+  - first:
+      213: 7004596116164251314
+    second: Fermata Character (6)_3
+  - first:
+      213: -28967383894523079
+    second: Fermata Character (6)_4
+  - first:
+      213: 54678378311702480
+    second: Fermata Character (6)_5
+  - first:
+      213: -4602578221397756899
+    second: Fermata Character (6)_6
+  - first:
+      213: 3371005362174731638
+    second: Fermata Character (6)_7
+  - first:
+      213: -4887494030255923091
+    second: Fermata Character (6)_8
+  - first:
+      213: 4300870006675093183
+    second: Fermata Character (6)_9
+  - first:
+      213: -3095251756681573132
+    second: Fermata Character (6)_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fermata Character (6)_0
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 680
+        width: 427
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f50d121374daad30800000000000000
+      internalID: 4443597573044635121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 604
+        width: 157
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b9664234b3f57a0800000000000000
+      internalID: -6386320587028522090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_2
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 449
+        width: 921
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 617d9e8419da48350800000000000000
+      internalID: 6018125841578972950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 550
+        width: 236
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be0d034e03553160800000000000000
+      internalID: 7004596116164251314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_4
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 459
+        width: 419
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93305ec5156199ff0800000000000000
+      internalID: -28967383894523079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_5
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 503
+        width: 25
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7d92402b142c000800000000000000
+      internalID: 54678378311702480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 313
+        width: 431
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1433ae3e7b5020c0800000000000000
+      internalID: -4602578221397756899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_7
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 313
+        width: 303
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675ac5c348738ce20800000000000000
+      internalID: 3371005362174731638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_8
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 313
+        width: 307
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60e0c413122c2cb0800000000000000
+      internalID: -4887494030255923091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_9
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 313
+        width: 388
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6300deb72cfab30800000000000000
+      internalID: 4300870006675093183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fermata Character (6)_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 1637
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc47983de47b05d0800000000000000
+      internalID: -3095251756681573132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c43def4d569287b48a48bd410c1d4e4c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fermata Character (6)_0: 4443597573044635121
+      Fermata Character (6)_1: -6386320587028522090
+      Fermata Character (6)_10: -3095251756681573132
+      Fermata Character (6)_2: 6018125841578972950
+      Fermata Character (6)_3: 7004596116164251314
+      Fermata Character (6)_4: -28967383894523079
+      Fermata Character (6)_5: 54678378311702480
+      Fermata Character (6)_6: -4602578221397756899
+      Fermata Character (6)_7: 3371005362174731638
+      Fermata Character (6)_8: -4887494030255923091
+      Fermata Character (6)_9: 4300870006675093183
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

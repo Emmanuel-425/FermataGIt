@@ -25,6 +25,7 @@ public class SequenceZone : MonoBehaviour
     private int currentProgress;
     private bool isActive;
     private bool isBridgeActive;
+    private bool isBridgePending;
     private bool hasSolvedOnce;
 
     public event Action OnSequenceCompleted;
@@ -58,9 +59,10 @@ public class SequenceZone : MonoBehaviour
 
     public void Activate()
     {
+        if (isBridgeActive || isBridgePending) return;
+
         isActive = true;
         currentProgress = 0;
-        isBridgeActive = false;
 
         CancelInvoke(nameof(ResetSequence));
         CancelInvoke(nameof(FinishBridgeActivation));
@@ -70,18 +72,20 @@ public class SequenceZone : MonoBehaviour
 
     public void Deactivate()
     {
-        bool wasInBridge = isBridgeActive;
+        bool wasInBridge = isBridgeActive || isBridgePending;
 
         isActive = false;
         currentProgress = 0;
         isBridgeActive = false;
+        isBridgePending = false;
         hasSolvedOnce = false;
 
-        CancelInvoke(nameof(ResetSequence));
-        CancelInvoke(nameof(FinishBridgeActivation));
-
         if (!wasInBridge)
+        {
+            CancelInvoke(nameof(FinishBridgeActivation));
+            CancelInvoke(nameof(ResetSequence));
             HideAllPlatforms();
+        }
     }
 
     public bool HasSolvedOnce() => hasSolvedOnce;
@@ -153,13 +157,14 @@ public class SequenceZone : MonoBehaviour
         if (currentProgress >= platforms.Length)
         {
             hasSolvedOnce = true;
-
+            isBridgePending = true;
             Invoke(nameof(FinishBridgeActivation), completionDelay);
         }
     }
 
     private void FinishBridgeActivation()
     {
+        isBridgePending = false;
         if (victoryJingle != null)
             audioSource.PlayOneShot(victoryJingle);
 
@@ -188,6 +193,7 @@ public class SequenceZone : MonoBehaviour
 
         currentProgress = 0;
         isBridgeActive = false;
+        isBridgePending = false;
 
         HideAllPlatforms();
 

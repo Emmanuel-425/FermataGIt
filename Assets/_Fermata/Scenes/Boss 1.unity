@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b4f3142f62502479b0d89d2cbb6551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthUI
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1095926449}
   heartPrefab: {fileID: 1135997315497503844, guid: b62351d90111b4045b871ab7a340e6a3, type: 3}
   container: {fileID: 245197996}
 --- !u!1 &1644416996
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   bossHealth: {fileID: 852753388}
   heartPrefab: {fileID: 1135997315497503844, guid: b62351d90111b4045b871ab7a340e6a3, type: 3}
   container: {fileID: 653705385}
-  dimmedAlpha: 0.3
+  dimmedAlpha: 0.1
 --- !u!1 &1759824256
 GameObject:
   m_ObjectHideFlags: 0

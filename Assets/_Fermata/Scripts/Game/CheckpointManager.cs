@@ -64,10 +64,9 @@ public class CheckpointManager : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        if (player == null)
-        {
-            return;
-        }
+        if (player == null) return;
+
+        CameraManager.instance?.RestoreDefaultCamera();
 
         if (playerRigidbody != null)
         {

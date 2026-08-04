@@ -5,6 +5,7 @@ public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
     public CinemachineCamera[] cameras; 
+    public CinemachineCamera defaultCamera;
     private CinemachinePositionComposer composer; 
     
     public float normalYDamp = 1f;
@@ -29,6 +30,15 @@ public class CameraManager : MonoBehaviour
     }
 
     public void SetFalling(bool falling) { isFalling = falling; }
+
+    public void RestoreDefaultCamera()
+    {
+        if (defaultCamera == null) return;
+        foreach (var cam in cameras)
+            if (cam != null) cam.gameObject.SetActive(false);
+        defaultCamera.gameObject.SetActive(true);
+        composer = defaultCamera.GetComponent<CinemachinePositionComposer>();
+    }
 
     public void SwapCamera(CinemachineCamera newCam)
     {

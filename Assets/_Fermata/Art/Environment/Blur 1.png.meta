@@ -1,0 +1,1287 @@
+fileFormatVersion: 2
+guid: 1caf692f5464f6b439473e778c28bbad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8450120598003124088
+    second: Blur 1_0
+  - first:
+      213: 2392989582703710983
+    second: Blur 1_1
+  - first:
+      213: 5622872504012363310
+    second: Blur 1_2
+  - first:
+      213: 3659024849097345545
+    second: Blur 1_3
+  - first:
+      213: -7850582855398042088
+    second: Blur 1_4
+  - first:
+      213: 4597884881837896240
+    second: Blur 1_5
+  - first:
+      213: 8857553092694531516
+    second: Blur 1_6
+  - first:
+      213: -4793868822910866404
+    second: Blur 1_7
+  - first:
+      213: 5003198099790710034
+    second: Blur 1_8
+  - first:
+      213: 2583392107792972314
+    second: Blur 1_9
+  - first:
+      213: -3207429613939831123
+    second: Blur 1_10
+  - first:
+      213: -8350205367347340865
+    second: Blur 1_11
+  - first:
+      213: -2041432090558546682
+    second: Blur 1_12
+  - first:
+      213: 8040180064965783171
+    second: Blur 1_13
+  - first:
+      213: 4224410260566922507
+    second: Blur 1_14
+  - first:
+      213: 6076541311772762811
+    second: Blur 1_15
+  - first:
+      213: -1947598694600840037
+    second: Blur 1_16
+  - first:
+      213: -4522037567783471348
+    second: Blur 1_17
+  - first:
+      213: -8248841668102993135
+    second: Blur 1_18
+  - first:
+      213: 7428491363837028532
+    second: Blur 1_19
+  - first:
+      213: -58877517478975366
+    second: Blur 1_20
+  - first:
+      213: 4794601054816431846
+    second: Blur 1_21
+  - first:
+      213: -446290145745545928
+    second: Blur 1_22
+  - first:
+      213: 6178560450609066162
+    second: Blur 1_23
+  - first:
+      213: 746283330953813814
+    second: Blur 1_24
+  - first:
+      213: -4448429208353233811
+    second: Blur 1_25
+  - first:
+      213: 6642505365872995066
+    second: Blur 1_26
+  - first:
+      213: -2382333544492700350
+    second: Blur 1_27
+  - first:
+      213: -740154185840866309
+    second: Blur 1_28
+  - first:
+      213: -663782985356853129
+    second: Blur 1_29
+  - first:
+      213: 840774672998242678
+    second: Blur 1_30
+  - first:
+      213: 6443460496156863599
+    second: Blur 1_31
+  - first:
+      213: 7895155276713021453
+    second: Blur 1_32
+  - first:
+      213: -2562270869544917616
+    second: Blur 1_33
+  - first:
+      213: -8742154170326653074
+    second: Blur 1_34
+  - first:
+      213: 330729766215518322
+    second: Blur 1_35
+  - first:
+      213: -7351389470392885329
+    second: Blur 1_36
+  - first:
+      213: 5578651538629581399
+    second: Blur 1_37
+  - first:
+      213: -6128144954428975349
+    second: Blur 1_38
+  - first:
+      213: 187910249319702433
+    second: Blur 1_39
+  - first:
+      213: 1031690218095417946
+    second: Blur 1_40
+  - first:
+      213: -5472009056693673885
+    second: Blur 1_41
+  - first:
+      213: 7684430469670838546
+    second: Blur 1_42
+  - first:
+      213: 8564546522452555043
+    second: Blur 1_43
+  - first:
+      213: 3401623566441888617
+    second: Blur 1_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blur 1_0
+      rect:
+        serializedVersion: 2
+        x: 4488
+        y: 5990
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888ffc636142bba80800000000000000
+      internalID: -8450120598003124088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_1
+      rect:
+        serializedVersion: 2
+        x: 4960
+        y: 5624
+        width: 920
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703d34cc85b953120800000000000000
+      internalID: 2392989582703710983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_2
+      rect:
+        serializedVersion: 2
+        x: 6460
+        y: 5252
+        width: 2082
+        height: 824
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26d7fa40c4780e40800000000000000
+      internalID: 5622872504012363310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_3
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 5840
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a46c2c6b777c230800000000000000
+      internalID: 3659024849097345545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_4
+      rect:
+        serializedVersion: 2
+        x: 2158
+        y: 5506
+        width: 1186
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8165a38bc702d0390800000000000000
+      internalID: -7850582855398042088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_5
+      rect:
+        serializedVersion: 2
+        x: 3490
+        y: 5564
+        width: 1100
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032361c70f7fecf30800000000000000
+      internalID: 4597884881837896240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_6
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 5560
+        width: 600
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd5835cb995cea70800000000000000
+      internalID: 8857553092694531516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_7
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 4676
+        width: 1268
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ce39e54b1c87db0800000000000000
+      internalID: -4793868822910866404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_8
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 5058
+        width: 970
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2154fe6e92eee6540800000000000000
+      internalID: 5003198099790710034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_9
+      rect:
+        serializedVersion: 2
+        x: 3054
+        y: 5176
+        width: 976
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a3c844f6d0ad320800000000000000
+      internalID: 2583392107792972314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_10
+      rect:
+        serializedVersion: 2
+        x: 4418
+        y: 5180
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dae4c0382cbec73d0800000000000000
+      internalID: -3207429613939831123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_11
+      rect:
+        serializedVersion: 2
+        x: 5872
+        y: 4384
+        width: 1608
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb993bda57c1e1c80800000000000000
+      internalID: -8350205367347340865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_12
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 4748
+        width: 616
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60dbc2164506ba3e0800000000000000
+      internalID: -2041432090558546682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_13
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 4456
+        width: 1184
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e667e9b25749f60800000000000000
+      internalID: 8040180064965783171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_14
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 4130
+        width: 982
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b055b9600ce10aa30800000000000000
+      internalID: 4224410260566922507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 3952
+        width: 1010
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2a33fc026345450800000000000000
+      internalID: 6076541311772762811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_16
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 4216
+        width: 584
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c6d4b5e4db8f4e0800000000000000
+      internalID: -1947598694600840037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_17
+      rect:
+        serializedVersion: 2
+        x: 3402
+        y: 4200
+        width: 1242
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c077b477ace7e31c0800000000000000
+      internalID: -4522037567783471348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_18
+      rect:
+        serializedVersion: 2
+        x: 4696
+        y: 4188
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11bc744053a368d80800000000000000
+      internalID: -8248841668102993135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_19
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 4236
+        width: 1124
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8209e998d471760800000000000000
+      internalID: 7428491363837028532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_20
+      rect:
+        serializedVersion: 2
+        x: 5902
+        y: 3642
+        width: 1394
+        height: 658
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78a865b533de2ff0800000000000000
+      internalID: -58877517478975366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_21
+      rect:
+        serializedVersion: 2
+        x: 7270
+        y: 3858
+        width: 1274
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eeeb08a148d98240800000000000000
+      internalID: 4794601054816431846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_22
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 3782
+        width: 908
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835541c1a757ec9f0800000000000000
+      internalID: -446290145745545928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_23
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 4094
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0b4d19ef7aeb550800000000000000
+      internalID: 6178560450609066162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_24
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 3874
+        width: 1010
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f1c4b4cb45b5a00800000000000000
+      internalID: 746283330953813814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_25
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 3662
+        width: 1096
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6422ab24310442c0800000000000000
+      internalID: -4448429208353233811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2392
+        width: 8640
+        height: 1028
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa6c7fcf6bee2c50800000000000000
+      internalID: 6642505365872995066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3384
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24de300734040fed0800000000000000
+      internalID: -2382333544492700350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_28
+      rect:
+        serializedVersion: 2
+        x: 8548
+        y: 3384
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfbcfe180b17ab5f0800000000000000
+      internalID: -740154185840866309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_29
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1360
+        width: 1676
+        height: 886
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7704bd544e4c9c6f0800000000000000
+      internalID: -663782985356853129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_30
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1386
+        width: 1720
+        height: 840
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67994384c180bab00800000000000000
+      internalID: 840774672998242678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_31
+      rect:
+        serializedVersion: 2
+        x: 3714
+        y: 1362
+        width: 840
+        height: 778
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c21bdae25cb6950800000000000000
+      internalID: 6443460496156863599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_32
+      rect:
+        serializedVersion: 2
+        x: 4970
+        y: 1704
+        width: 702
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00d703d4e9319d60800000000000000
+      internalID: 7895155276713021453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_33
+      rect:
+        serializedVersion: 2
+        x: 5970
+        y: 1800
+        width: 502
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095a17a383cf07cd0800000000000000
+      internalID: -2562270869544917616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_34
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 792
+        width: 1204
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67eaf99911ada680800000000000000
+      internalID: -8742154170326653074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_35
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 1330
+        width: 74
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2788ce758fcf69400800000000000000
+      internalID: 330729766215518322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_36
+      rect:
+        serializedVersion: 2
+        x: 4514
+        y: 716
+        width: 1102
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf5fabd93e9af990800000000000000
+      internalID: -7351389470392885329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_37
+      rect:
+        serializedVersion: 2
+        x: 6370
+        y: 820
+        width: 1156
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ad3b5740a5b6d40800000000000000
+      internalID: 5578651538629581399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_38
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1218
+        width: 290
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07982bd1a474faa0800000000000000
+      internalID: -6128144954428975349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_39
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 828
+        width: 1240
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af1b5c40679b9200800000000000000
+      internalID: 187910249319702433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_40
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 16
+        width: 938
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a92d789cc415e00800000000000000
+      internalID: 1031690218095417946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_41
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 218
+        width: 1062
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360ad0041c48f04b0800000000000000
+      internalID: -5472009056693673885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_42
+      rect:
+        serializedVersion: 2
+        x: 5278
+        y: 94
+        width: 932
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2112bed5cc494aa60800000000000000
+      internalID: 7684430469670838546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_43
+      rect:
+        serializedVersion: 2
+        x: 7362
+        y: 46
+        width: 816
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325771d6fa16bd670800000000000000
+      internalID: 8564546522452555043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blur 1_44
+      rect:
+        serializedVersion: 2
+        x: 4088
+        y: 64
+        width: 68
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96bbd517c9ef43f20800000000000000
+      internalID: 3401623566441888617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Blur 1_0: -8450120598003124088
+      Blur 1_1: 2392989582703710983
+      Blur 1_10: -3207429613939831123
+      Blur 1_11: -8350205367347340865
+      Blur 1_12: -2041432090558546682
+      Blur 1_13: 8040180064965783171
+      Blur 1_14: 4224410260566922507
+      Blur 1_15: 6076541311772762811
+      Blur 1_16: -1947598694600840037
+      Blur 1_17: -4522037567783471348
+      Blur 1_18: -8248841668102993135
+      Blur 1_19: 7428491363837028532
+      Blur 1_2: 5622872504012363310
+      Blur 1_20: -58877517478975366
+      Blur 1_21: 4794601054816431846
+      Blur 1_22: -446290145745545928
+      Blur 1_23: 6178560450609066162
+      Blur 1_24: 746283330953813814
+      Blur 1_25: -4448429208353233811
+      Blur 1_26: 6642505365872995066
+      Blur 1_27: -2382333544492700350
+      Blur 1_28: -740154185840866309
+      Blur 1_29: -663782985356853129
+      Blur 1_3: 3659024849097345545
+      Blur 1_30: 840774672998242678
+      Blur 1_31: 6443460496156863599
+      Blur 1_32: 7895155276713021453
+      Blur 1_33: -2562270869544917616
+      Blur 1_34: -8742154170326653074
+      Blur 1_35: 330729766215518322
+      Blur 1_36: -7351389470392885329
+      Blur 1_37: 5578651538629581399
+      Blur 1_38: -6128144954428975349
+      Blur 1_39: 187910249319702433
+      Blur 1_4: -7850582855398042088
+      Blur 1_40: 1031690218095417946
+      Blur 1_41: -5472009056693673885
+      Blur 1_42: 7684430469670838546
+      Blur 1_43: 8564546522452555043
+      Blur 1_44: 3401623566441888617
+      Blur 1_5: 4597884881837896240
+      Blur 1_6: 8857553092694531516
+      Blur 1_7: -4793868822910866404
+      Blur 1_8: 5003198099790710034
+      Blur 1_9: 2583392107792972314
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

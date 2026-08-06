@@ -76,12 +76,12 @@ public class SequenceZone : MonoBehaviour
 
         isActive = false;
         currentProgress = 0;
-        isBridgeActive = false;
-        isBridgePending = false;
         hasSolvedOnce = false;
 
         if (!wasInBridge)
         {
+            isBridgeActive = false;
+            isBridgePending = false;
             CancelInvoke(nameof(FinishBridgeActivation));
             CancelInvoke(nameof(ResetSequence));
             HideAllPlatforms();

@@ -8,6 +8,9 @@ public class PlayerBossHealth : MonoBehaviour
     [SerializeField] private int maxHP = 10;
     [SerializeField] private int wrongNoteDamage = 1;
 
+    [Header("Death")]
+    [SerializeField] private float deathDelay = 1f;
+
     [Header("Audio")]
     [SerializeField] private AudioClip hurtClip;
 
@@ -37,7 +40,12 @@ public class PlayerBossHealth : MonoBehaviour
         if (currentHP <= 0)
         {
             onDeath?.Invoke();
-            SceneManager.LoadScene("Level 1");
+            Invoke(nameof(LoadScene), deathDelay);
         }
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("Level 1");
     }
 }

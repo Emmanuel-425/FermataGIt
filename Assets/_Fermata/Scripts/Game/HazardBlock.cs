@@ -5,6 +5,9 @@ public class HazardBlock : MonoBehaviour
     [Header("Checkpoint")]
     [SerializeField] private CheckpointManager checkpointManager;
 
+    [Header("Death Delay")]
+    [SerializeField] private float deathDelay = 0.5f;
+
     private bool respawning;
 
     private void Awake()
@@ -41,15 +44,15 @@ public class HazardBlock : MonoBehaviour
     private void RespawnPlayer()
     {
         respawning = true;
+        Invoke(nameof(DoRespawn), deathDelay);
+    }
 
+    private void DoRespawn()
+    {
         if (checkpointManager != null)
-        {
             checkpointManager.RespawnPlayer();
-        }
         else
-        {
             Debug.LogError("HazardBlock: No CheckpointManager found.");
-        }
 
         Invoke(nameof(ResetRespawn), 0.2f);
     }

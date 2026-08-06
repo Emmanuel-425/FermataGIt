@@ -14634,6 +14634,9 @@ MonoBehaviour:
   defaultCamera: {fileID: 1225930105}
   normalYDamp: 1
   fallingYDamp: 0.2
+  verticalLookOffset: 0
+  verticalLookSpeed: 0
+  verticalLookDelay: 0
 --- !u!1 &625161597
 GameObject:
   m_ObjectHideFlags: 0
@@ -48117,6 +48120,14 @@ PrefabInstance:
       propertyPath: noteInputManager
       value: 
       objectReference: {fileID: 225115409}
+    - target: {fileID: 5177374361492680785, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+      propertyPath: largeRipplePrefab
+      value: 
+      objectReference: {fileID: 907571824978842662, guid: 53d70f0f562fd854fa7f9ba5ad7e29d5, type: 3}
+    - target: {fileID: 5177374361492680785, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+      propertyPath: normalRipplePrefab
+      value: 
+      objectReference: {fileID: 4338832308181203669, guid: 12e47ca1a70753b46b3c240783575128, type: 3}
     - target: {fileID: 6846907878894052030, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
       propertyPath: fallYLimit
       value: -11.33

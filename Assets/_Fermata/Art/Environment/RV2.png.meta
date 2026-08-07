@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: e8c3a18e65c5e3449a6db98a3b068644
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4575176129823168671
+    second: RV2_0
+  - first:
+      213: -4128708358338306113
+    second: RV2_1
+  - first:
+      213: -7792843870902518642
+    second: RV2_2
+  - first:
+      213: -5534652319320005923
+    second: RV2_3
+  - first:
+      213: 7002163445816137457
+    second: RV2_4
+  - first:
+      213: -5760216688381542529
+    second: RV2_5
+  - first:
+      213: -1509681432119280634
+    second: RV2_6
+  - first:
+      213: -7720854675264400581
+    second: RV2_7
+  - first:
+      213: 8712915661299890283
+    second: RV2_8
+  - first:
+      213: -3460678809329446923
+    second: RV2_9
+  - first:
+      213: 1317949391723762331
+    second: RV2_10
+  - first:
+      213: 1852984763031381239
+    second: RV2_11
+  - first:
+      213: -3349112357011264741
+    second: RV2_12
+  - first:
+      213: -4305295088490322657
+    second: RV2_13
+  - first:
+      213: 7834823497879949590
+    second: RV2_14
+  - first:
+      213: -3069254045026064997
+    second: RV2_15
+  - first:
+      213: 7364652995280342516
+    second: RV2_16
+  - first:
+      213: -2076511273790918568
+    second: RV2_17
+  - first:
+      213: 5072406488044998544
+    second: RV2_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RV2_0
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 6587
+        width: 390
+        height: 861
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98d4f2237a4e7f30800000000000000
+      internalID: 4575176129823168671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_1
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 6511
+        width: 412
+        height: 827
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf1f087f91e3b6c0800000000000000
+      internalID: -4128708358338306113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_2
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 6727
+        width: 562
+        height: 618
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c76c4a9c14ad390800000000000000
+      internalID: -7792843870902518642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_3
+      rect:
+        serializedVersion: 2
+        x: 3056
+        y: 6831
+        width: 370
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2a3a71a07f033b0800000000000000
+      internalID: -5534652319320005923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_4
+      rect:
+        serializedVersion: 2
+        x: 4569
+        y: 5641
+        width: 422
+        height: 1581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6981f0e8eac2160800000000000000
+      internalID: 7002163445816137457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_5
+      rect:
+        serializedVersion: 2
+        x: 5155
+        y: 6300
+        width: 326
+        height: 843
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fbdbbd0799f00b0800000000000000
+      internalID: -5760216688381542529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_6
+      rect:
+        serializedVersion: 2
+        x: 5551
+        y: 6668
+        width: 234
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cf6827cb88c0be0800000000000000
+      internalID: -1509681432119280634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_7
+      rect:
+        serializedVersion: 2
+        x: 6062
+        y: 5812
+        width: 733
+        height: 1211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33937664930ad490800000000000000
+      internalID: -7720854675264400581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_8
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 4614
+        width: 850
+        height: 2002
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68b7b581ae7ae870800000000000000
+      internalID: 8712915661299890283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_9
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 4814
+        width: 587
+        height: 1482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff423855f239ffc0800000000000000
+      internalID: -3460678809329446923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_10
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 4949
+        width: 876
+        height: 1692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9213ad2dfb4a4210800000000000000
+      internalID: 1317949391723762331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_11
+      rect:
+        serializedVersion: 2
+        x: 4159
+        y: 3815
+        width: 1398
+        height: 1038
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f462be03df17b910800000000000000
+      internalID: 1852984763031381239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_12
+      rect:
+        serializedVersion: 2
+        x: 5894
+        y: 4029
+        width: 1205
+        height: 895
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1be87f3e009581d0800000000000000
+      internalID: -3349112357011264741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_13
+      rect:
+        serializedVersion: 2
+        x: 5436
+        y: 2972
+        width: 1407
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15ec4d6de48044c0800000000000000
+      internalID: -4305295088490322657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_14
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 1138
+        width: 1134
+        height: 1362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 611940de572eabc60800000000000000
+      internalID: 7834823497879949590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_15
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 1787
+        width: 1595
+        height: 985
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b956ac825b1d765d0800000000000000
+      internalID: -3069254045026064997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_16
+      rect:
+        serializedVersion: 2
+        x: 5237
+        y: 1611
+        width: 1668
+        height: 855
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd83bd21e0843660800000000000000
+      internalID: 7364652995280342516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_17
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 452
+        width: 3242
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85039919fffbe23e0800000000000000
+      internalID: -2076511273790918568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RV2_18
+      rect:
+        serializedVersion: 2
+        x: 4009
+        y: 596
+        width: 2666
+        height: 758
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f0f4c73dec46640800000000000000
+      internalID: 5072406488044998544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RV2_0: 4575176129823168671
+      RV2_1: -4128708358338306113
+      RV2_10: 1317949391723762331
+      RV2_11: 1852984763031381239
+      RV2_12: -3349112357011264741
+      RV2_13: -4305295088490322657
+      RV2_14: 7834823497879949590
+      RV2_15: -3069254045026064997
+      RV2_16: 7364652995280342516
+      RV2_17: -2076511273790918568
+      RV2_18: 5072406488044998544
+      RV2_2: -7792843870902518642
+      RV2_3: -5534652319320005923
+      RV2_4: 7002163445816137457
+      RV2_5: -5760216688381542529
+      RV2_6: -1509681432119280634
+      RV2_7: -7720854675264400581
+      RV2_8: 8712915661299890283
+      RV2_9: -3460678809329446923
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

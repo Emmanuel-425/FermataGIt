@@ -13,6 +13,7 @@ public class MovingPlatformDown : MonoBehaviour
     private bool activated;
     private bool moving;
     private float delayTimer;
+    private Vector2 startPosition;
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class MovingPlatformDown : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.gravityScale = 0f;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        startPosition = rb.position;
     }
 
     private void FixedUpdate()
@@ -58,5 +61,13 @@ public class MovingPlatformDown : MonoBehaviour
             return;
 
         activated = true;
+    }
+
+    public void Reset()
+    {
+        activated = false;
+        moving = false;
+        delayTimer = 0f;
+        rb.MovePosition(startPosition);
     }
 }

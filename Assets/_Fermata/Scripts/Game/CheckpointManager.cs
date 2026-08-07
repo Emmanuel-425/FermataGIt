@@ -81,6 +81,15 @@ public class CheckpointManager : MonoBehaviour
                 currentCheckpointPosition;
         }
 
+        foreach (var platform in FindObjectsByType<BreakingPlatform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            platform.Reset();
+
+        foreach (var platform in FindObjectsByType<MovingPlatformUp>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            platform.Reset();
+
+        foreach (var platform in FindObjectsByType<MovingPlatformDown>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+            platform.Reset();
+
         SequenceManager sequenceManager =
             FindFirstObjectByType<SequenceManager>();
 

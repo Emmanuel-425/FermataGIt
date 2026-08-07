@@ -20,6 +20,7 @@ public class MusicPlatform : MonoBehaviour
     private Collider2D platformCollider;
     private LineRenderer listenOutline;
     private AudioSource audioSource;
+    private BreakingPlatform breakingPlatform;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class MusicPlatform : MonoBehaviour
         audioSource.spatialBlend = 0f;
 
         CreateListenOutline();
+        breakingPlatform = GetComponent<BreakingPlatform>();
         Hide();
     }
 
@@ -93,6 +95,8 @@ public class MusicPlatform : MonoBehaviour
 
         if (listenOutline != null)
             listenOutline.enabled = false;
+
+        breakingPlatform?.Reset();
     }
 
     public void ListenReveal(float duration)

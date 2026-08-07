@@ -60,6 +60,18 @@ public class BreakingPlatform : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void Reset()
+    {
+        if (spriteRenderer == null || platformCollider == null) return;
+        StopAllCoroutines();
+        triggered = false;
+        platformCollider.enabled = true;
+        Color color = spriteRenderer.color;
+        color.a = 1f;
+        spriteRenderer.color = color;
+        gameObject.SetActive(true);
     }
 }

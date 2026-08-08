@@ -45,7 +45,7 @@ public class BossProjectile : MonoBehaviour
         audioSource.spatialBlend = 0f;
     }
 
-    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed, Transform boss, Transform player, BossHealth health)
+    public void Init(NoteType[] notes, Vector2 targetPosition, float projectileSpeed, Transform boss, Transform player, BossHealth health, float noteDelayOverride = 0f)
     {
         Notes = notes;
         noteCount = notes.Length;
@@ -54,6 +54,7 @@ public class BossProjectile : MonoBehaviour
         bossTransform = boss;
         playerTransform = player;
         bossHealth = health;
+        if (noteDelayOverride > 0f) notePreviewDelay = noteDelayOverride;
         moveDirection = (targetPosition - (Vector2)transform.position).normalized;
 
         StartCoroutine(PlayNotePreview());

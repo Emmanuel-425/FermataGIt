@@ -16,6 +16,7 @@ public class BossAttackController : MonoBehaviour
     [Header("Phase 2")]
     [SerializeField] private float phase2ComboInterval = 2f;
     [SerializeField] private float[] noteCountSpeeds = { 5f, 4.5f, 3.5f, 2.5f };
+    [SerializeField] private float phase2NoteDelay = 0.5f;
 
     [Header("References")]
     [SerializeField] private Transform player;
@@ -88,7 +89,7 @@ public class BossAttackController : MonoBehaviour
 
         proj.PassingLineY = passingLineY;
         proj.PlayerY = player.position.y;
-        proj.Init(notes, player.position, speed, boss, player, bossHealth);
+        proj.Init(notes, player.position, speed, boss, player, bossHealth, isPhaseTwo ? phase2NoteDelay : 0f);
         proj.onPassedPlayer.AddListener(OnProjectilePassedPlayer);
         proj.onHitPlayer.AddListener(OnProjectileHitPlayer);
         proj.onCrossedLine.AddListener(OnProjectileCrossedLine);

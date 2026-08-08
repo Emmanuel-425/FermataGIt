@@ -11,6 +11,7 @@ public class CheckpointManager : MonoBehaviour
     private Vector3 currentCheckpointPosition;
 
     private Rigidbody2D playerRigidbody;
+    private DissolveEffect dissolveEffect;
 
     private void Start()
     {
@@ -25,6 +26,8 @@ public class CheckpointManager : MonoBehaviour
 
         playerRigidbody =
             player.GetComponent<Rigidbody2D>();
+
+        dissolveEffect = player.GetComponentInChildren<DissolveEffect>();
 
         if (startingCheckpoint != null)
         {
@@ -65,6 +68,8 @@ public class CheckpointManager : MonoBehaviour
     public void RespawnPlayer()
     {
         if (player == null) return;
+
+        dissolveEffect?.Reset();
 
         CameraManager.instance?.RestoreDefaultCamera();
 

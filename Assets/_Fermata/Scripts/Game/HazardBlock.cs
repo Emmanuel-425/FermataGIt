@@ -5,6 +5,9 @@ public class HazardBlock : MonoBehaviour
     [Header("Checkpoint")]
     [SerializeField] private CheckpointManager checkpointManager;
 
+    [Header("Dissolve")]
+    [SerializeField] private DissolveEffect dissolveEffect;
+
     [Header("Death Delay")]
     [SerializeField] private float deathDelay = 0.5f;
 
@@ -44,6 +47,7 @@ public class HazardBlock : MonoBehaviour
     private void RespawnPlayer()
     {
         respawning = true;
+        dissolveEffect?.PlayDeath();
         Invoke(nameof(DoRespawn), deathDelay);
     }
 

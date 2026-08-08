@@ -6511,6 +6511,7 @@ MonoBehaviour:
   maxHP: 10
   wrongNoteDamage: 1
   deathDelay: 1
+  dissolveEffect: {fileID: 1095926450}
   hurtClip: {fileID: 8300000, guid: cf259f46bd6d81f42840a52978968a15, type: 3}
   onDeath:
     m_PersistentCalls:
@@ -6530,6 +6531,105 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1095926450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095926439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edcc4efaee59ab4ba5e3a120209cbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DissolveEffect
+  targetRenderer: {fileID: 1095926457}
+  hitDuration: 0.4
+  hitCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  hitColor: {r: 1, g: 0.4, b: 0.4, a: 1}
+  hitDissolveScale: 30
+  deathDuration: 1
+  deathCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  deathColor: {r: 1, g: 0, b: 0, a: 1}
+  deathDissolveScale: 100
+  noteDuration: 0.3
+  noteCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  noteColor: {r: 0.4, g: 1, b: 0.4, a: 1}
+  noteDissolveScale: 5
+--- !u!212 &1095926457 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4500386595711209876, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+  m_PrefabInstance: {fileID: 1366956086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1130581430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7811,6 +7911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4500386595711209876, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1848e71ba8490e646a9c66efc324f6d9, type: 2}
     - target: {fileID: 5177374361492680785, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7829,6 +7933,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2072820843175245598, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1095926449}
+    - targetCorrespondingSourceObject: {fileID: 2072820843175245598, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1095926450}
   m_SourcePrefab: {fileID: 100100000, guid: 1e99cb9f8eae48243a00726abe89ae0d, type: 3}
 --- !u!1 &1397598880
 GameObject:
@@ -9227,6 +9334,7 @@ MonoBehaviour:
   smallRipplePrefab: {fileID: 4338832308181203669, guid: 12e47ca1a70753b46b3c240783575128, type: 3}
   bigRipplePrefab: {fileID: 907571824978842662, guid: 53d70f0f562fd854fa7f9ba5ad7e29d5, type: 3}
   playerTransform: {fileID: 1095926447}
+  dissolveEffect: {fileID: 1095926450}
 --- !u!4 &1649756659
 Transform:
   m_ObjectHideFlags: 0

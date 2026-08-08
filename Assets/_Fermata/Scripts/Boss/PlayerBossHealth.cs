@@ -11,6 +11,9 @@ public class PlayerBossHealth : MonoBehaviour
     [Header("Death")]
     [SerializeField] private float deathDelay = 1f;
 
+    [Header("Dissolve")]
+    [SerializeField] private DissolveEffect dissolveEffect;
+
     [Header("Audio")]
     [SerializeField] private AudioClip hurtClip;
 
@@ -39,8 +42,13 @@ public class PlayerBossHealth : MonoBehaviour
 
         if (currentHP <= 0)
         {
+            dissolveEffect?.PlayDeath();
             onDeath?.Invoke();
             Invoke(nameof(LoadScene), deathDelay);
+        }
+        else
+        {
+            dissolveEffect?.PlayHit();
         }
     }
 

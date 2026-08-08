@@ -11,6 +11,9 @@ public class NoteInputManager : MonoBehaviour
     [Tooltip("Time (in seconds) before another note can be played after a CORRECT note.")]
     [SerializeField] private float noteInputCooldown = 1f;
 
+    [Header("Dissolve")]
+    [SerializeField] private DissolveEffect dissolveEffect;
+
     [Header("Audio")]
     [SerializeField] private AudioClip wrongNoteClip;
 
@@ -67,6 +70,7 @@ public class NoteInputManager : MonoBehaviour
 
         if (wasCorrect)
         {
+            dissolveEffect?.PlayCorrectNote();
             OnCorrectNote?.Invoke();
             BackgroundMusicManager.Instance?.Duck();
             StartCoroutine(InputCooldown());

@@ -13,6 +13,9 @@ public class BossNoteInputHandler : MonoBehaviour
     [SerializeField] private GameObject bigRipplePrefab;
     [SerializeField] private Transform playerTransform;
 
+    [Header("Dissolve")]
+    [SerializeField] private DissolveEffect dissolveEffect;
+
     private readonly List<BossProjectile> projectileQueue = new List<BossProjectile>();
 
     public void RegisterProjectile(BossProjectile projectile)
@@ -46,6 +49,7 @@ public class BossNoteInputHandler : MonoBehaviour
 
         if (played == target.CurrentNote)
         {
+            dissolveEffect?.PlayCorrectNote();
             speedController?.ApplyRecovery();
 
             bool isLastNote = target.CurrentNoteIndex >= target.NoteCount - 1;

@@ -46,6 +46,6 @@ public class PlayerBossHealth : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("World 1");
     }
 }

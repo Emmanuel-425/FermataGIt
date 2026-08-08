@@ -6512,7 +6512,7 @@ MonoBehaviour:
   wrongNoteDamage: 1
   deathDelay: 1
   dissolveEffect: {fileID: 1095926450}
-  hurtClip: {fileID: 8300000, guid: cf259f46bd6d81f42840a52978968a15, type: 3}
+  hurtClip: {fileID: 0}
   onDeath:
     m_PersistentCalls:
       m_Calls: []

@@ -4443,6 +4443,7 @@ MonoBehaviour:
   - 4.5
   - 2
   - 1
+  phase2NoteDelay: 0.7
   player: {fileID: 1095926447}
   boss: {fileID: 852753390}
   speedController: {fileID: 1095926448}

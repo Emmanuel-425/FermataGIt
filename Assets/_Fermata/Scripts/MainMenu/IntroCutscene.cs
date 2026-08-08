@@ -21,17 +21,23 @@ public class IntroCutscene : MonoBehaviour
 
     public void Play()
     {
+        BackgroundMusicManager.Instance?.Duck();
         videoPanel.SetActive(true);
         skipButton.onClick.AddListener(Skip);
         videoPlayer.loopPointReached += OnVideoFinished;
         videoPlayer.Play();
     }
 
-    private void OnVideoFinished(VideoPlayer vp) => LoadGame();
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        BackgroundMusicManager.Instance?.Restore();
+        LoadGame();
+    }
 
     private void Skip()
     {
         videoPlayer.Stop();
+        BackgroundMusicManager.Instance?.Restore();
         LoadGame();
     }
 

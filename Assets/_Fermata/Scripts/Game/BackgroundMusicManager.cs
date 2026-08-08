@@ -9,14 +9,16 @@ public class BackgroundMusicManager : MonoBehaviour
 
     [Header("Ducking")]
     [SerializeField] private float normalVolume = 1f;
-    [SerializeField] private float duckVolume = 0.3f;
+    [SerializeField] private float duckVolume = 0.1f;
     [SerializeField] private float duckSpeed = 3f;
 
     private bool isDucked;
 
     private void Awake()
     {
+        if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

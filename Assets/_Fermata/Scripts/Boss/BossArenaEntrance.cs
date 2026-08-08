@@ -9,6 +9,7 @@ public class BossArenaEntrance : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        BackgroundMusicManager.Instance?.Duck();
         SceneManager.LoadScene(bossSceneName);
     }
 }

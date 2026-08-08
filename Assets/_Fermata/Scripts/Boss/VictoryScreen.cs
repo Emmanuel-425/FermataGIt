@@ -50,6 +50,7 @@ public class VictoryScreen : MonoBehaviour
 
     private void Proceed()
     {
+        BackgroundMusicManager.Instance?.Restore();
         SceneManager.LoadScene(nextScene);
     }
 }
